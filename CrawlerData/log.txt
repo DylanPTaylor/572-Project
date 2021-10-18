@@ -1,0 +1,71 @@
+
+Date Time: 13/10/2021 20:28:01
+Message: Excution time: 0.0 minutes, 5.792269945144653 seconds
+
+Date Time: 13/10/2021 20:28:32
+Message: Starting crawlers...
+
+Date Time: 13/10/2021 20:28:39
+Message: Starting video: 9lFkNHn8dYQ from genre Gaming, TTL: 1, Branches: 3, Nodes: 4, Edges: 3
+
+
+Date Time: 13/10/2021 20:28:39
+Message: Excution time: 0.0 minutes, 6.870221853256226 seconds
+
+Date Time: 13/10/2021 20:28:47
+Message: Starting video: FbG6Vg_d4Mc from genre News & Politics (liberal), TTL: 1, Branches: 3, Nodes: 8, Edges: 6
+
+
+Date Time: 13/10/2021 20:28:47
+Message: Excution time: 0.0 minutes, 8.08006477355957 seconds
+
+Date Time: 13/10/2021 20:28:55
+Message: Starting video: PpyNKmdvGVo from genre Entertainment, TTL: 1, Branches: 3, Nodes: 12, Edges: 9
+
+
+Date Time: 13/10/2021 20:28:55
+Message: Excution time: 0.0 minutes, 8.23421311378479 seconds
+
+Date Time: 13/10/2021 20:29:02
+Message: Starting video: 4JzwhcstTEA from genre News & Politics (conservative), TTL: 1, Branches: 3, Nodes: 16, Edges: 12
+
+
+Date Time: 13/10/2021 20:29:02
+Message: Excution time: 0.0 minutes, 7.058053493499756 seconds
+
+Date Time: 13/10/2021 20:29:02
+Message: Total execution time:0.0 minutes, 30.242553234100342 seconds
+
+Date Time: 13/10/2021 20:30:29
+Message: Starting crawlers...
+
+Date Time: 13/10/2021 20:39:37
+Message: Starting video 9lFkNHn8dYQ from genre Gaming stats: TTL: 5, Branches: 3, Nodes: 205, Edges: 324
+
+
+Date Time: 13/10/2021 20:39:37
+Message: Excution time: 9.0 minutes, 8.12111496925354 seconds
+
+Date Time: 13/10/2021 20:47:36
+Message: Starting video FbG6Vg_d4Mc from genre News & Politics (liberal) stats: TTL: 5, Branches: 3, Nodes: 494, Edges: 674
+
+
+Date Time: 13/10/2021 20:47:36
+Message: Excution time: 7.0 minutes, 58.70253825187683 seconds
+
+Date Time: 13/10/2021 20:55:13
+Message: Starting video PpyNKmdvGVo from genre Entertainment stats: TTL: 5, Branches: 3, Nodes: 707, Edges: 1003
+
+
+Date Time: 13/10/2021 20:55:13
+Message: Excution time: 7.0 minutes, 37.068281412124634 seconds
+
+Date Time: 13/10/2021 21:02:10
+Message: Starting video 4JzwhcstTEA from genre News & Politics (conservative) stats: TTL: 5, Branches: 3, Nodes: 995, Edges: 1359
+
+
+Date Time: 13/10/2021 21:02:10
+Message: Excution time: 6.0 minutes, 56.664143800735474 seconds
+
+Date Time: 13/10/2021 21:02:10
+Message: Total execution time:31.0 minutes, 40.55807447433472 seconds

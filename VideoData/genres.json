@@ -1,0 +1,62 @@
+[
+    {
+        "genreId": "28",
+        "title": "Science & Technology"
+    },
+    {
+        "genreId": "27",
+        "title": "Education"
+    },
+    {
+        "genreId": "24",
+        "title": "Entertainment"
+    },
+    {
+        "genreId": "29",
+        "title": "Nonprofits & Activism"
+    },
+    {
+        "genreId": "22",
+        "title": "People & Blogs"
+    },
+    {
+        "genreId": "26",
+        "title": "Howto & Style"
+    },
+    {
+        "genreId": "25",
+        "title": "News & Politics"
+    },
+    {
+        "genreId": "23",
+        "title": "Comedy"
+    },
+    {
+        "genreId": "10",
+        "title": "Music"
+    },
+    {
+        "genreId": "17",
+        "title": "Sports"
+    },
+    {
+        "genreId": "1",
+        "title": "Film & Animation"
+    },
+    {
+        "genreId": "20",
+        "title": "Gaming"
+    },
+    {
+        "genreId": "19",
+        "title": "Travel & Events"
+    },
+    {
+        "genreId": "2",
+        "title": "Autos & Vehicles"
+    },
+    {
+        "genreId": "15",
+        "title": "Pets & Animals"
+    }
+]
