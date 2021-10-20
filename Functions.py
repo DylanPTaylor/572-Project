@@ -4,6 +4,7 @@ import random
 import os
 import networkx as nx
 from datetime import datetime
+import shutil
 
 
 def Home():
@@ -26,7 +27,8 @@ def Log(message):
 def graph_data(crawler):
     populate_crawler(crawler)
     update_node(crawler)
-    add_self(crawler)
+    if not crawler.graph.has_node(crawler.video):
+        add_self(crawler)
 
 
 def compute_averages(graph):
@@ -39,6 +41,22 @@ def compute_averages(graph):
         try:
             for probability in probabilities:
                 average = float(probabilities[probability]) / in_degree
+                probabilities[probability] = float(int(average*10000)/10000)
+            graph.nodes()[Id]["probablities"] = probabilities
+        except Exception:
+            continue
+
+
+def compute_final_averages(graph):
+    for Id in graph.nodes():
+        node = graph.nodes()[Id]
+        probabilities = node["probabilities"]
+
+        duplication = node["duplication"]
+
+        try:
+            for probability in probabilities:
+                average = float(probabilities[probability]) / duplication
                 probabilities[probability] = float(int(average*10000)/10000)
             graph.nodes()[Id]["probablities"] = probabilities
         except Exception:
@@ -70,6 +88,19 @@ def update_node(crawler):
     node["probabilities"] = crawler.probabilities
 
 
+def sum_probabilities(initial, toAdd):
+    if type(initial) != dict:
+        initial = json.loads(initial.strip().replace("\'", "\""))
+    if type(toAdd) != dict:
+        toAdd = json.loads(toAdd.strip().replace("\'", "\""))
+    for genre in toAdd:
+        try:
+            initial[genre] += toAdd[genre]
+        except KeyError:
+            initial[genre] = toAdd[genre]
+    return initial
+
+
 def add_self(crawler):
     crawler.graph.add_node(crawler.video, genre=crawler.genre,
                            probabilities=crawler.probabilities)
@@ -99,38 +130,67 @@ def write_graph(graph, path):
     write_edges(dict(graph.adj), path+"edges.csv")
     write_nodes(graph.nodes(), path+"nodes.csv")
 
+# right now edge weights of final graph are number of crawlers to traverse that edge,
+# not how many times each crawler travsersed it, summed up.
+
 
 def compile_crawlers(path):
     final_graph = nx.DiGraph()
 
-    # os.makedirs(path+"compiled\\"+datetime.now().strftime("%d-%m-%Y"))
+    final_graph_path = path+"\\CompiledGraphs\\"+datetime.now().strftime("%d-%m-%Y")
+    crawlers_path = path+"\\CrawlerData\\"
 
-    for folder in os.listdir(path):
-        if folder == "compiled" or folder == "log.txt":
+    if os.path.exists(final_graph_path):
+        shutil.rmtree(final_graph_path)
+
+    os.makedirs(final_graph_path)
+
+    for crawler in os.listdir(crawlers_path):
+        if crawler == "log.txt":
             continue
 
-        edges = open(path+folder+"\\edges.csv", 'r')
-        edges.readline()
-        edge = edges.readline()
-        while (edge != ''):
-            edge = edge.split(',')
-            final_graph.add_edge(
-                edge[0], edge[1], weight=edge[2].replace("{", "").replace("}", "").replace("\n", ""))
-            edge = edges.readline()
-
-        nodes = open(path+folder+"\\nodes.csv", 'r')
+        nodes = open(crawlers_path+crawler+"\\nodes.csv", 'r')
         nodes.readline()
         node = nodes.readline()
         while (node != ""):
             node = node.replace("\n", "").split(';')
-            final_graph.add_node(node[0], genre=node[1], probabilities=node[2])
+
+            # If this node is already in this graph, add this duplicated nodes probabilities to it,
+            # will take average later using the duplication field
+            if final_graph.has_node(node[0]):
+                nodeInGraph = final_graph.nodes()[node[0]]
+                nodeInGraph["probabilities"] = sum_probabilities(
+                    nodeInGraph["probabilities"], node[2])
+                nodeInGraph["duplication"] = int(
+                    nodeInGraph["duplication"]) + 1
+            # other wise add it with this nodes probabilities.
+            else:
+                final_graph.add_node(
+                    node[0], genre=node[1], probabilities=node[2], duplication=1)
+
             node = nodes.readline()
 
-        write_graph(final_graph, path+"compiled\\" +
-                    datetime.now().strftime("%d-%m-%Y")+"\\")
+        edges = open(crawlers_path+crawler+"\\edges.csv", 'r')
+        edges.readline()
+        edge = edges.readline()
+        while (edge != ''):
+            edge = edge.split(',')
+
+            try:
+                edge_weight = final_graph.get_edge_data(
+                    edge[0], edge[1], default=0)
+                final_graph[edge[0]][edge[1]]["weight"] = int(
+                    edge_weight["weight"])+1
+            except Exception:
+                final_graph.add_edge(edge[0], edge[1], weight=1)
+
+            edge = edges.readline()
+
+    compute_final_averages(final_graph)
+    write_graph(final_graph, final_graph_path+"\\")
 # endregion
 
-        # region Crawler Functions
+    # region Crawler Functions
 
 
 def select_random(videos, numberToPick):

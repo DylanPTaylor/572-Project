@@ -54,4 +54,4 @@ def main():
 
 
 if __name__ == "__main__":
-    Functions.compile_crawlers(HOME + "\\CrawlerData\\")
+    Functions.compile_crawlers(HOME)
