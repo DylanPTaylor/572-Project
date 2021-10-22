@@ -3,16 +3,17 @@ import Crawler
 import networkx as nx
 import os
 import time
-#import Youtube
 import Functions
+from datetime import datetime
 
 HOME = Functions.Home()
 
 # comedy, education, People & Blogs, News & Politics, News & Politics (cons), News & Politics (lib)
-starting_videos = {"9lFkNHn8dYQ": "Gaming",
-                   "FbG6Vg_d4Mc": "News & Politics (liberal)", "PpyNKmdvGVo": "Entertainment", "4JzwhcstTEA": "News & Politics (conservative)"}
+starting_videos = {"bOuEJf8Dr_4": "Nonprofits & Activism",
+                   "uYew7v8PyhA": "News & Politics",
+                   "Cj76WFeRNX0": "News & Politics"}
 
-ttl = 5
+ttl = 6
 candidates_to_watch = 3
 candidatesToConsider = 10
 
@@ -31,7 +32,7 @@ def run_crawler(video):
 
     Functions.compute_averages(crawler.graph)
     Functions.write_graph(crawler.graph, HOME +
-                          "\\CrawlerData\\"+crawler.video+"\\")
+                          "\\Level1\\"+crawler.video+"-"+datetime.now().strftime("%d-%m-%Y")+"\\")
 
     nodes = len(list(crawler.graph.nodes()))
     edges = len(list(crawler.graph.edges()))
@@ -44,14 +45,23 @@ def main():
 
     for video in starting_videos:
         start_time = time.time()
-        run_crawler(video)
-        Functions.Log("Starting video "+video+" from genre "+starting_videos[video]+" stats: TTL: " + str(ttl) + ", Branches: "+str(candidates_to_watch) +
-                      ", Nodes: "+str(nodes)+", Edges: "+str(edges)+"\nExcution time: "+str(((time.time() - start_time)//60))+" minutes, " +
-                      str(((time.time() - start_time) % 60))+" seconds")
+        try:
+            run_crawler(video)
+            Functions.Log("Crawler finished. \nVideo: "+video+"\nGenre:"+starting_videos[video]+"\nTTL: " + str(ttl) + ", Branches: "+str(candidates_to_watch) +
+                          "\n Number of Nodes: "+str(nodes)+"\n Number of Edges: "+str(edges)+"\nExecution time: "+str(((time.time() - start_time)//60))+" minutes, " +
+                          str(((time.time() - start_time) % 60))+" seconds")
+        except Exception as e:
+            Functions.Log("Crawler failed.  \nVideo: "+video+"\nException: "+e)
 
-    Functions.Log("Total execution time:"+str(((time.time() - total_time)//60))+" minutes, " +
+    Functions.Log("All Crawlers executed. Total execution time: "+str(((time.time() - total_time)//60))+" minutes, " +
                   str(((time.time() - total_time) % 60))+" seconds")
+
+    Functions.Log("Compiling crawler networks...")
+    Functions.compile_networks(HOME+"\\Level1\\", HOME+"\\Level2\\")
+
+    Functions.compile_networks(HOME+"\\Level2\\", HOME+"\\Level3\\")
+    Functions.Log("Finished compiling network.")
 
 
 if __name__ == "__main__":
-    Functions.compile_crawlers(HOME)
+    main()

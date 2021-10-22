@@ -113,21 +113,6 @@ def extract_ids(dataset):
 
 # region In Memory
 
-
-def translate_genre_id_to_name(id):
-    # Check if we have this genre
-    with open(HOME+"\\VideoData\\genres.json", "r") as file:
-        genres = json.load(file)
-        file.close()
-
-    for genre in genres:
-        if id == genre["genreId"]:
-            return genre["title"]
-
-    # if not, get it and return it
-    get_genre_names([id])
-    return translate_genre_id_to_name(id)
-
 # get HTML data
 
 
@@ -146,8 +131,11 @@ def fetch_data(video):
 
     json_data = json.loads(ytInitialData)
 
-    suggested_videos = json_data['contents']['twoColumnWatchNextResults']['secondaryResults']['secondaryResults']['results'][1:]
-
+    try:
+        suggested_videos = json_data['contents']['twoColumnWatchNextResults'][
+            'secondaryResults']['secondaryResults']['results'][1:]
+    except Exception:
+        print("")
     suggested_videos = extract_ids(suggested_videos)
 
     genre = parse_content(meta_data, 'genre')

@@ -62,12 +62,14 @@ class Crawler:
                 spawn.watch()
 
                 # Add or set edge weight for this video to the one we just watched
-                try:
-                    edge_weight = self.graph.get_edge_data(
-                        self.video, v, default=0)
-                    self.graph[self.video][v]["weight"] = int(
-                        edge_weight["weight"])+1
-                except Exception:
+
+                edge_weight = self.graph.get_edge_data(
+                    self.video, v, default=0)
+                if edge_weight == 0:
                     self.graph.add_edge(self.video, v, weight=1)
+                else:
+                    self.graph[self.video][v]["weight"] = int(
+                    edge_weight["weight"])+1
+                    
         else:
             Functions.graph_data(self)
