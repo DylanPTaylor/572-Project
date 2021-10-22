@@ -601,3 +601,35 @@ TTL: 6, Branches: 3
  Number of Nodes: 679
  Number of Edges: 991
 Execution time: 20.0 minutes, 3.9512813091278076 seconds
+
+---Date Time: 22/10/2021 11:43:43 ---Message: Starting crawlers...
+
+---Date Time: 22/10/2021 12:00:18 ---Message: Crawler finished. 
+Video: bOuEJf8Dr_4
+Genre:Nonprofits & Activism
+TTL: 6, Branches: 3
+ Number of Nodes: 396
+ Number of Edges: 868
+Execution time: 16.0 minutes, 34.936434268951416 seconds
+
+---Date Time: 22/10/2021 12:15:57 ---Message: Crawler finished. 
+Video: uYew7v8PyhA
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 1156
+ Number of Edges: 1883
+Execution time: 15.0 minutes, 39.055460691452026 seconds
+
+---Date Time: 22/10/2021 12:31:59 ---Message: Crawler finished. 
+Video: Cj76WFeRNX0
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 1804
+ Number of Edges: 2841
+Execution time: 16.0 minutes, 2.1618940830230713 seconds
+
+---Date Time: 22/10/2021 12:31:59 ---Message: All Crawlers executed. Total execution time: 48.0 minutes, 16.154802560806274 seconds
+
+---Date Time: 22/10/2021 12:31:59 ---Message: Compiling crawler networks...
+
+---Date Time: 22/10/2021 12:32:00 ---Message: Finished compiling network.
