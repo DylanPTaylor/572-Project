@@ -7,13 +7,6 @@ HOME = Functions.Home()
 
 
 class Crawler:
-    # NOTE on Adjacency lists vs matricies:
-    # Space: Lists: O(n+m) and matricies: O(n^2)
-    # Checking for edges: O(n) for lists and O(1) for matricies
-    # Adding/deleting nodes: O(n) for lists and O(n^2) for matricies
-    # Both add edges in O(1)
-    # Generally, lists are better for sparse graphs while matricies are better for dense graphs
-    # So, we use lists for crawlers, and a matrix for the final network
 
     # region Attributes
     # default values
@@ -44,11 +37,11 @@ class Crawler:
         self.video = str(startingVideo)
         self.numberOfCandidatesToConsider = int(candidatesToConsider)
 
-    # endregion
     def spawn_crawler(self, video):
         spawn = Crawler(
             self.TTL-1, self.numberOfCandidatesToConsider, self.branches, video)
         return spawn
+    # endregion
 
     def watch(self):
         if (self.TTL > 0):
@@ -69,7 +62,6 @@ class Crawler:
                     self.graph.add_edge(self.video, v, weight=1)
                 else:
                     self.graph[self.video][v]["weight"] = int(
-                    edge_weight["weight"])+1
-                    
+                        edge_weight["weight"])+1
         else:
             Functions.graph_data(self)

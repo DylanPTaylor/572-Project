@@ -1,14 +1,14 @@
+def Home():
+    return "C:\\Users\\dylan\\OneDrive\\Desktop\\School\\Code\\Python\\572"
+
 import json
-import Youtube
+from Youtube import fetch_data, get_genres
 import random
 import os
 import networkx as nx
 from datetime import datetime
 import shutil
 
-
-def Home():
-    return "C:\\Users\\dylan\\OneDrive\\Desktop\\School\\Code\\Python\\572"
 
 
 HOME = Home()
@@ -40,12 +40,15 @@ def compute_averages(graph):
         for prob in probabilities:
             sum += float(probabilities[prob])
 
+        if in_degree == 0: in_degree+=1
+
         try:
             if sum/in_degree > 1.1 or sum/in_degree < 0.9:
-                in_degree += 1
+                    in_degree += 1
             for probability in probabilities:
                 average = float(probabilities[probability]) / in_degree
-                probabilities[probability] = float(int(average*10000)/10000)
+                #probabilities[probability] = float(int(average*10000)/10000) #Might be sending some probs to zero
+                probabilities[probability] = average
             graph.nodes()[Id]["probablities"] = probabilities
         except Exception:
             continue
@@ -61,7 +64,7 @@ def compute_final_averages(graph):
         try:
             for probability in probabilities:
                 average = float(probabilities[probability]) / duplication
-                probabilities[probability] = float(int(average*10000)/10000)
+                probabilities[probability] = average
             graph.nodes()[Id]["probablities"] = probabilities
         except Exception:
             continue
@@ -201,12 +204,12 @@ def select_random(videos, numberToPick):
 
 
 def populate_crawler(crawler):
-    json_data = Youtube.fetch_data(crawler.video)
+    json_data = fetch_data(crawler.video)
 
     crawler.candidateVideos = json_data["candidate videos"][:
                                                             crawler.numberOfCandidatesToConsider]
     crawler.genre = json_data["genre"]
-    crawler.candidateGenres = Youtube.get_genres(crawler.candidateVideos)
+    crawler.candidateGenres = get_genres(crawler.candidateVideos)
     if crawler.graph.has_node(crawler.video):
         node = crawler.graph.nodes()[crawler.video]
         crawler.probabilities = node["probabilities"]

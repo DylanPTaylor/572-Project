@@ -633,3 +633,97 @@ Execution time: 16.0 minutes, 2.1618940830230713 seconds
 ---Date Time: 22/10/2021 12:31:59 ---Message: Compiling crawler networks...
 
 ---Date Time: 22/10/2021 12:32:00 ---Message: Finished compiling network.
+
+---Date Time: 28/10/2021 10:16:29 ---Message: Compiling crawler networks...
+
+---Date Time: 28/10/2021 10:16:30 ---Message: Finished compiling network.
+
+---Date Time: 28/10/2021 10:38:48 ---Message: Starting crawlers...
+
+---Date Time: 28/10/2021 10:59:34 ---Message: Crawler finished. 
+Video: bOuEJf8Dr_4
+Genre:Nonprofits & Activism
+TTL: 6, Branches: 3
+ Number of Nodes: 431
+ Number of Edges: 924
+Execution time: 20.0 minutes, 45.16827702522278 seconds
+
+---Date Time: 28/10/2021 11:18:17 ---Message: Crawler finished. 
+Video: uYew7v8PyhA
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 1167
+ Number of Edges: 1928
+Execution time: 18.0 minutes, 43.58200716972351 seconds
+
+---Date Time: 28/10/2021 11:37:03 ---Message: Crawler finished. 
+Video: t6OBk9YBLQU
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 1836
+ Number of Edges: 2940
+Execution time: 18.0 minutes, 45.882558822631836 seconds
+
+---Date Time: 28/10/2021 11:37:03 ---Message: All Crawlers executed. Total execution time: 58.0 minutes, 14.633840799331665 seconds
+
+---Date Time: 28/10/2021 11:37:03 ---Message: Compiling crawler networks...
+
+---Date Time: 28/10/2021 11:37:03 ---Message: Finished compiling network.
+
+---Date Time: 28/10/2021 11:51:48 ---Message: Compiling crawler networks...
+
+---Date Time: 28/10/2021 11:51:49 ---Message: Finished compiling network.
+
+---Date Time: 28/10/2021 12:01:44 ---Message: Starting crawlers...
+
+---Date Time: 28/10/2021 12:20:47 ---Message: Crawler finished. 
+Video: 9C_HReR_McQ
+Genre:Film & Animation
+TTL: 6, Branches: 3
+ Number of Nodes: 622
+ Number of Edges: 979
+Execution time: 19.0 minutes, 2.794182538986206 seconds
+
+---Date Time: 28/10/2021 12:39:36 ---Message: Crawler finished. 
+Video: FCopvc1Nf20
+Genre:Entertainment
+TTL: 6, Branches: 3
+ Number of Nodes: 1334
+ Number of Edges: 1932
+Execution time: 18.0 minutes, 48.48584032058716 seconds
+
+---Date Time: 28/10/2021 12:59:08 ---Message: Crawler finished. 
+Video: w2pOBQ2WCbs
+Genre:Gaming
+TTL: 6, Branches: 3
+ Number of Nodes: 1929
+ Number of Edges: 2872
+Execution time: 19.0 minutes, 32.37362360954285 seconds
+
+---Date Time: 28/10/2021 12:59:08 ---Message: All Crawlers executed. Total execution time: 57.0 minutes, 23.65464472770691 seconds
+
+---Date Time: 28/10/2021 12:59:08 ---Message: Compiling crawler networks...
+
+---Date Time: 28/10/2021 12:59:08 ---Message: Finished compiling network.
+
+---Date Time: 28/10/2021 15:41:39 ---Message: Starting crawlers...
+
+---Date Time: 28/10/2021 15:59:09 ---Message: Crawler finished. 
+Video: NKiMoM0dO1Q
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 487
+ Number of Edges: 860
+Execution time: 17.0 minutes, 29.24856400489807 seconds
+
+---Date Time: 28/10/2021 16:18:43 ---Message: Crawler finished. 
+Video: MsD3aWzOZgQ
+Genre:News & Politics (cons)
+TTL: 6, Branches: 3
+ Number of Nodes: 1175
+ Number of Edges: 1884
+Execution time: 19.0 minutes, 34.13343358039856 seconds
+
+---Date Time: 28/10/2021 17:00:16 ---Message: Compiling crawler networks...
+
+---Date Time: 28/10/2021 17:00:16 ---Message: Finished compiling network.

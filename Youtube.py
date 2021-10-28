@@ -2,39 +2,22 @@
 # I Created a google cloud project to store the API Key which is needed to authenticate with Youtubes DATA Api V3
 
 # need 3 libraries to run this:
-
 # pip install requests
 # pip install --upgrade google-api-python-client
 # pip install --upgrade google-auth-oauthlib google-auth-httplib2
 
 
-# guideCategory seem important
-# videoCategory might be the tags
-
 # using "list" operation as get
 # must use "part" paramter in all get requests
-
 # default of 10,000 quota, or requests, per day for api calls
 # our api calls should cost 1 each
 
-# https://github.com/youtube/api-samples
-# video resources has "suggestions" field and "topic details" - > might be what we are looking for
-
-
-# might not need these
-from googleapiclient.errors import HttpError
-from google_auth_oauthlib.flow import InstalledAppFlow
-import argparse
-import re
-
-import os
 import requests
 import json
 from googleapiclient.discovery import build
 from bs4 import BeautifulSoup
-from Functions import Home
 
-HOME = Home()
+HOME = "C:\\Users\\dylan\\OneDrive\\Desktop\\School\\Code\\Python\\572"
 YOUTUBE_URI_BASE = 'https://youtube.com'
 YOUTUBE_WATCH_ARG = '/watch?v='
 API_SERVICE_NAME = 'youtube'
@@ -81,6 +64,21 @@ def get_genre_names(Ids):
 # endregion
 
 # region Helpers
+
+
+def translate_genre_id_to_name(id):
+    # Check if we have this genre
+    with open(HOME+"\\VideoData\\genres.json", "r") as file:
+        genres = json.load(file)
+        file.close()
+
+    for genre in genres:
+        if id == genre["genreId"]:
+            return genre["title"]
+
+    # if not, get it and return it
+    get_genre_names([id])
+    return translate_genre_id_to_name(id)
 
 
 def get_authenticated_service():
