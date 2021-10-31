@@ -21,6 +21,15 @@ def Log(message):
         log.write("Message: "+message+'\n')
         log.close()
 
+def load_genres_from_file():
+    genres = []
+    with open(HOME+"\\VideoData\\genres.json") as in_file:
+        genre_list = json.load(in_file)
+        for dict in genre_list:
+            genres.append(dict["title"])
+    
+    return genres
+
 # region Graph Functions
 
 
@@ -124,16 +133,41 @@ def write_edges(adjLists, path):
                 file.write(
                     thisNode+','+neighbour+',' + str(adjLists[thisNode][neighbour]['weight']) + '\n')
 
+def load_edges(graph,path):
+    edges_path = path+"edges.csv"
+    with open(edges_path) as edges_file:
+        edge = edges_file.readline()  # header
+        edge = edges_file.readline()  # first edge
+        while (edge != ""):
+            edge = edge.split(",")
+            graph.add_edge(edge[0], edge[1], weight=int(edge[2]))
+            edge = edges_file.readline()
+def load_nodes(graph, path):
+    nodes_path = path + "nodes.csv"
+    with open(nodes_path) as node_file:
+        node = node_file.readline()  # header
+        node = node_file.readline()  # first node
+        while (node != ""):
+            node = node.split(';')
+            node[2] = node[2].strip()
 
+            graph.add_node(node[0], genre=node[1], probabilities=json.loads(
+                node[2].replace("\'", "\"")))
+            node = node_file.readline()
+
+def load_graph(path):
+    graph = nx.DiGraph()
+
+    load_nodes(graph, path)
+    load_edges(graph, path)
+    
+    return graph
+    
 def write_graph(graph, path):
     if not os.path.exists(path):
         os.makedirs(path)
     write_edges(dict(graph.adj), path+"edges.csv")
     write_nodes(graph.nodes(), path+"nodes.csv")
-
-# right now edge weights of final graph are number of crawlers to traverse that edge,
-# not how many times each crawler travsersed it, summed up.
-
 
 #  probabilities are a little weird soemtimes
 def compile_networks(source, target):
@@ -178,10 +212,10 @@ def compile_networks(source, target):
             edge_weight = final_graph.get_edge_data(
                 edge[0], edge[1], default=0)
             if edge_weight == 0:
-                final_graph.add_edge(edge[0], edge[1], weight=1)
+                final_graph.add_edge(edge[0], edge[1], weight=int(edge[2]))
             else:
                 final_graph[edge[0]][edge[1]]["weight"] = int(
-                    edge_weight["weight"])+1
+                    edge_weight["weight"])+int(edge[2])
 
             edge = edges.readline()
 

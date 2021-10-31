@@ -9,8 +9,9 @@ from datetime import datetime
 HOME = Functions.Home()
 
 # 3 at 6^3 ~= 3,200 api calls
-starting_videos = {"MsD3aWzOZgQ": "News & Politics (cons)",
-                   "90LdVlPN8Ig": "News & Politics (lib)"}
+starting_videos = {"5xs2BSGe8Wg": "News & Politics",
+                   "q7HzpGYmBhg": "Comedy",
+                   "f9azZkjOBvI": "Gaming"}
 
 ttl = 6
 candidates_to_watch = 3
@@ -54,6 +55,7 @@ def main():
     for video in starting_videos:
         start_time = time.time()
         try:
+            Functions.Log("Starting crawler on "+video)
             run_crawler(video)
             Functions.Log("Crawler finished. \nVideo: "+video+"\nGenre:"+starting_videos[video]+"\nTTL: " + str(ttl) + ", Branches: "+str(candidates_to_watch) +
                           "\n Number of Nodes: "+str(nodes)+"\n Number of Edges: "+str(edges)+"\nExecution time: "+str(((time.time() - start_time)//60))+" minutes, " +
@@ -73,5 +75,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    compile()
+    main()
+    # compile()

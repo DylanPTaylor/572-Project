@@ -1,27 +1,16 @@
 from itertools import count
 from datetime import datetime
+
+from networkx.algorithms.bipartite import cluster
 import Functions
 import Youtube
 import json
 import networkx as nx
 import os
 
-HOME = Functions.Home()
+HOME = Functions.Home()+"\\AnalysisData"
 
-
-def load_graph(path):
-    graph = nx.DiGraph()
-
-    with open(HOME+path) as node_file:
-        node = node_file.readline()
-        node = node_file.readline()
-        while (node != ""):
-            node = node.split(';')
-            node[2] = node[2].strip()
-
-            graph.add_node(node[0], genre=node[1], probabilities=node[2])
-            node = node_file.readline()
-    return graph
+# region Probabilities
 
 
 def crunch_probabilities(nodes):
@@ -32,8 +21,7 @@ def crunch_probabilities(nodes):
     genre_probability_sets = {}
     genre_counters = {}
     for node in nodes:
-        this_nodes_probabilities = json.loads(
-            nodes[node]["probabilities"].replace("\'", "\""))
+        this_nodes_probabilities = nodes[node]["probabilities"]
         this_nodes_genre = nodes[node]["genre"]
 
         # Error checking: skip ones who dont sum to zero
@@ -82,7 +70,7 @@ def translate(sets):
         sets[genre] = new_probs
 
 
-def write_file(probs, path):
+def write_probability_file(probs, path):
     column_header = []
     for genre in probs:
         for g in probs[genre]:
@@ -109,13 +97,87 @@ def write_file(probs, path):
             outfile.write("\n")
 
 
-if __name__ == "__main__":
-
-    graph = load_graph("\\Level3\\28-10-2021\\nodes.csv")
+def probability_analysis(graph):
 
     probs = crunch_probabilities(dict(graph.nodes()))
 
     translate(probs)
 
-    write_file(probs, "\\genre_probabilities-" +
-               datetime.now().strftime("%d-%m-%Y")+".csv")
+    write_probability_file(probs, "\\genre_probabilities-" +
+                           datetime.now().strftime("%d-%m-%Y")+".csv")
+
+# endregion
+
+# region Edge Weights
+
+# endregion
+
+# region Degree
+
+
+def average_indegree_by_genre(graph, genres):
+    genre_degree_sets = {}
+    nodes = graph.nodes()
+    for genre in genres:
+
+        nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
+        in_degrees = dict(graph.in_degree(nodes_in_this_genre, "weight"))
+
+        number_of_nodes = len(in_degrees)
+
+        sum = 0
+        for node in in_degrees:
+            sum += in_degrees[node]
+
+        average = sum / number_of_nodes
+
+        genre_degree_sets[genre] = average
+
+    return genre_degree_sets
+
+
+def clustering_by_genre(graph, genres):
+    cluster_coefficients = {}
+    nodes = graph.nodes()
+    for genre in genres:
+
+        nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
+
+        nodes_coefficients = nx.clustering(
+            graph, nodes_in_this_genre, "weight")
+
+        sum = 0
+        number_of_nodes = len(nodes_coefficients)
+        for node in nodes_coefficients:
+            sum += nodes_coefficients[node]
+
+        cluster_coefficients[genre] = (sum / number_of_nodes)*100
+
+    return cluster_coefficients
+
+# def highest_degree_by_genre():
+
+# def degree_distribution_by_genre():
+
+# def degree_distribution():
+
+
+def degree_analysis(graph, genres):
+
+    avg_indegrees = average_indegree_by_genre(graph, genres)
+
+    cluster_coefficients = clustering_by_genre(graph, genres)
+
+# endregion
+
+
+# region community clumping?
+# endregion
+if __name__ == "__main__":
+    relative_path = "\\Level3\\28-10-2021\\"
+
+    graph = Functions.load_graph(HOME+relative_path)
+    genres = Functions.load_genres_from_file()
+    probability_analysis(graph)
+    degree_analysis(graph, genres)
+    # get average weight, highest weight

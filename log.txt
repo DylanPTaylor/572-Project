@@ -727,3 +727,123 @@ Execution time: 19.0 minutes, 34.13343358039856 seconds
 ---Date Time: 28/10/2021 17:00:16 ---Message: Compiling crawler networks...
 
 ---Date Time: 28/10/2021 17:00:16 ---Message: Finished compiling network.
+
+---Date Time: 29/10/2021 11:41:51 ---Message: Compiling crawler networks...
+
+---Date Time: 29/10/2021 11:41:52 ---Message: Finished compiling network.
+
+---Date Time: 29/10/2021 11:42:06 ---Message: Starting crawlers...
+
+---Date Time: 29/10/2021 11:46:17 ---Message: Crawler failed.  
+Video: iC5dWobPSik
+Exception: local variable 'suggested_videos' referenced before assignment
+
+---Date Time: 29/10/2021 12:03:52 ---Message: Crawler finished. 
+Video: iMXkmoG4zIg
+Genre:Education
+TTL: 6, Branches: 3
+ Number of Nodes: 1002
+ Number of Edges: 1268
+Execution time: 17.0 minutes, 35.53642439842224 seconds
+
+---Date Time: 29/10/2021 12:21:56 ---Message: Crawler finished. 
+Video: w-HYZv6HzAs
+Genre:People & Blogs
+TTL: 6, Branches: 3
+ Number of Nodes: 1359
+ Number of Edges: 2117
+Execution time: 18.0 minutes, 3.9977540969848633 seconds
+
+---Date Time: 29/10/2021 12:21:56 ---Message: All Crawlers executed. Total execution time: 39.0 minutes, 49.79569911956787 seconds
+
+---Date Time: 29/10/2021 12:21:56 ---Message: Compiling crawler networks...
+
+---Date Time: 29/10/2021 12:21:57 ---Message: Finished compiling network.
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Crawler failed.  
+Video: 5xs2BSGe8Wg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Crawler failed.  
+Video: q7HzpGYmBhg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:00 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 30/10/2021 19:34:01 ---Message: Crawler failed.  
+Video: f9azZkjOBvI
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:01 ---Message: All Crawlers executed. Total execution time: 0.0 minutes, 0.6605386734008789 seconds
+
+---Date Time: 30/10/2021 19:34:01 ---Message: Compiling crawler networks...
+
+---Date Time: 30/10/2021 19:34:02 ---Message: Finished compiling network.
+
+---Date Time: 30/10/2021 19:34:54 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:34:54 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Crawler failed.  
+Video: 5xs2BSGe8Wg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Crawler failed.  
+Video: q7HzpGYmBhg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Crawler failed.  
+Video: f9azZkjOBvI
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:34:55 ---Message: All Crawlers executed. Total execution time: 0.0 minutes, 1.3109815120697021 seconds
+
+---Date Time: 30/10/2021 19:34:55 ---Message: Compiling crawler networks...
+
+---Date Time: 30/10/2021 19:34:56 ---Message: Finished compiling network.
+
+---Date Time: 30/10/2021 19:35:15 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:35:19 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:35:28 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:35:34 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:35:38 ---Message: Crawler failed.  
+Video: 5xs2BSGe8Wg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:35:40 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 30/10/2021 19:35:49 ---Message: Crawler failed.  
+Video: q7HzpGYmBhg
+Exception: the JSON object must be str, bytes or bytearray, not NoneType
+
+---Date Time: 30/10/2021 19:35:51 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 30/10/2021 19:36:20 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:36:21 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:36:52 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:36:54 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:37:15 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:37:17 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 19:38:27 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 19:38:32 ---Message: Starting crawler on 5xs2BSGe8Wg

@@ -133,7 +133,7 @@ def fetch_data(video):
         suggested_videos = json_data['contents']['twoColumnWatchNextResults'][
             'secondaryResults']['secondaryResults']['results'][1:]
     except Exception:
-        print("")
+        print("Didnt see any suggestions for "+video)
     suggested_videos = extract_ids(suggested_videos)
 
     genre = parse_content(meta_data, 'genre')
