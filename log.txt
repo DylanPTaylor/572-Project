@@ -847,3 +847,41 @@ Exception: the JSON object must be str, bytes or bytearray, not NoneType
 ---Date Time: 30/10/2021 19:38:27 ---Message: Starting crawlers...
 
 ---Date Time: 30/10/2021 19:38:32 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 21:44:30 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 21:44:30 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 22:08:12 ---Message: Crawler finished. 
+Video: 5xs2BSGe8Wg
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 426
+ Number of Edges: 832
+Execution time: 23.0 minutes, 41.80618119239807 seconds
+
+---Date Time: 30/10/2021 22:08:12 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 30/10/2021 22:30:57 ---Message: Crawler finished. 
+Video: q7HzpGYmBhg
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 1149
+ Number of Edges: 1830
+Execution time: 22.0 minutes, 45.4376482963562 seconds
+
+---Date Time: 30/10/2021 22:30:57 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 30/10/2021 22:53:05 ---Message: Crawler finished. 
+Video: f9azZkjOBvI
+Genre:Gaming
+TTL: 6, Branches: 3
+ Number of Nodes: 1645
+ Number of Edges: 2759
+Execution time: 22.0 minutes, 7.483774185180664 seconds
+
+---Date Time: 30/10/2021 22:53:05 ---Message: All Crawlers executed. Total execution time: 68.0 minutes, 34.729273319244385 seconds
+
+---Date Time: 30/10/2021 22:53:05 ---Message: Compiling crawler networks...
+
+---Date Time: 30/10/2021 22:53:06 ---Message: Finished compiling network.
