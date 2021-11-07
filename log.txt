@@ -847,3 +847,587 @@ Exception: the JSON object must be str, bytes or bytearray, not NoneType
 ---Date Time: 30/10/2021 19:38:27 ---Message: Starting crawlers...
 
 ---Date Time: 30/10/2021 19:38:32 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 30/10/2021 21:28:54 ---Message: Starting crawlers...
+
+---Date Time: 30/10/2021 21:28:56 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 31/10/2021 09:34:47 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 09:34:47 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 09:35:25 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 09:35:26 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:28:00 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:28:00 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:34:39 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:34:40 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:37:08 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:37:08 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:38:30 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:38:30 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:39:13 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:39:13 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:39:52 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:39:53 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:41:09 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:41:10 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 11:43:06 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 11:43:07 ---Message: Finished compiling network.
+
+---Date Time: 31/10/2021 12:03:47 ---Message: Starting crawlers...
+
+---Date Time: 31/10/2021 12:03:47 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 31/10/2021 12:35:15 ---Message: Crawler finished. 
+Video: 5xs2BSGe8Wg
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 491
+ Number of Edges: 885
+Execution time: 31.0 minutes, 27.757846355438232 seconds
+
+---Date Time: 31/10/2021 12:35:15 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 31/10/2021 13:05:11 ---Message: Crawler finished. 
+Video: q7HzpGYmBhg
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 1303
+ Number of Edges: 1925
+Execution time: 29.0 minutes, 56.48458290100098 seconds
+
+---Date Time: 31/10/2021 13:05:11 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 31/10/2021 13:57:07 ---Message: Crawler finished. 
+Video: f9azZkjOBvI
+Genre:Gaming
+TTL: 6, Branches: 3
+ Number of Nodes: 1755
+ Number of Edges: 2779
+Execution time: 51.0 minutes, 55.34916615486145 seconds
+
+---Date Time: 31/10/2021 13:57:07 ---Message: All Crawlers executed. Total execution time: 113.0 minutes, 19.592745780944824 seconds
+
+---Date Time: 31/10/2021 13:57:07 ---Message: Compiling crawler networks...
+
+---Date Time: 31/10/2021 13:57:07 ---Message: Finished compiling network.
+
+---Date Time: 01/11/2021 12:58:59 ---Message: Starting crawlers...
+
+---Date Time: 01/11/2021 12:58:59 ---Message: Starting crawler on FCopvc1Nf20
+
+---Date Time: 01/11/2021 13:53:01 ---Message: Crawler failed.  
+Video: FCopvc1Nf20
+Exception: Unable to find the server at youtube.googleapis.com
+
+---Date Time: 01/11/2021 13:53:01 ---Message: All Crawlers executed. Total execution time: 54.0 minutes, 1.418280839920044 seconds
+
+---Date Time: 01/11/2021 13:53:01 ---Message: Compiling crawler networks...
+
+---Date Time: 01/11/2021 13:53:01 ---Message: Finished compiling network.
+
+---Date Time: 01/11/2021 13:53:12 ---Message: Starting crawlers...
+
+---Date Time: 01/11/2021 13:53:12 ---Message: Starting crawler on FCopvc1Nf20
+
+---Date Time: 01/11/2021 13:54:56 ---Message: Starting crawlers...
+
+---Date Time: 01/11/2021 13:54:56 ---Message: Starting crawler on FCopvc1Nf20
+
+---Date Time: 01/11/2021 14:15:42 ---Message: Crawler finished. 
+Video: FCopvc1Nf20
+Genre:Entertainment
+TTL: 6, Branches: 3
+ Number of Nodes: 625
+ Number of Edges: 919
+Execution time: 20.0 minutes, 45.245728492736816 seconds
+
+---Date Time: 01/11/2021 14:15:42 ---Message: All Crawlers executed. Total execution time: 20.0 minutes, 45.249794006347656 seconds
+
+---Date Time: 01/11/2021 14:15:42 ---Message: Compiling crawler networks...
+
+---Date Time: 01/11/2021 14:15:42 ---Message: Finished compiling network.
+
+---Date Time: 01/11/2021 14:17:25 ---Message: Starting crawlers...
+
+---Date Time: 01/11/2021 14:17:25 ---Message: Starting crawler on 9C_HReR_McQ
+
+---Date Time: 01/11/2021 14:47:56 ---Message: Crawler finished. 
+Video: 9C_HReR_McQ
+Genre:Film & Animation
+TTL: 6, Branches: 3
+ Number of Nodes: 669
+ Number of Edges: 986
+Execution time: 30.0 minutes, 30.653623819351196 seconds
+
+---Date Time: 01/11/2021 14:47:56 ---Message: All Crawlers executed. Total execution time: 30.0 minutes, 30.654620885849 seconds
+
+---Date Time: 01/11/2021 14:47:56 ---Message: Compiling crawler networks...
+
+---Date Time: 01/11/2021 14:47:57 ---Message: Finished compiling network.
+
+---Date Time: 01/11/2021 14:51:56 ---Message: Starting crawlers...
+
+---Date Time: 01/11/2021 14:51:56 ---Message: Starting crawler on uYew7v8PyhA
+
+---Date Time: 01/11/2021 15:12:03 ---Message: Crawler failed.  
+Video: uYew7v8PyhA
+Exception: 'oc6Tis5lYwY'
+
+---Date Time: 01/11/2021 15:12:03 ---Message: All Crawlers executed. Total execution time: 20.0 minutes, 6.785644769668579 seconds
+
+---Date Time: 01/11/2021 15:12:03 ---Message: Compiling crawler networks...
+
+---Date Time: 01/11/2021 15:12:03 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 09:02:28 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 09:02:28 ---Message: Starting crawler on uYew7v8PyhA
+
+---Date Time: 02/11/2021 09:32:04 ---Message: Crawler finished. 
+Video: uYew7v8PyhA
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 670
+ Number of Edges: 966
+Execution time: 29.0 minutes, 36.08092212677002 seconds
+
+---Date Time: 02/11/2021 09:32:04 ---Message: All Crawlers executed. Total execution time: 29.0 minutes, 36.082000732421875 seconds
+
+---Date Time: 02/11/2021 09:32:04 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 09:32:04 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 11:29:30 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 11:29:30 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 11:59:03 ---Message: Crawler failed.  
+Video: t6OBk9YBLQU
+Exception: local variable 'suggested_videos' referenced before assignment
+
+---Date Time: 02/11/2021 11:59:03 ---Message: All Crawlers executed. Total execution time: 29.0 minutes, 33.24168562889099 seconds
+
+---Date Time: 02/11/2021 11:59:03 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 11:59:03 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 12:32:46 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 12:32:46 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 12:35:56 ---Message: Crawler failed.  
+Video: t6OBk9YBLQU
+Exception: local variable 'suggested_videos' referenced before assignment
+
+---Date Time: 02/11/2021 12:35:56 ---Message: All Crawlers executed. Total execution time: 3.0 minutes, 10.225319862365723 seconds
+
+---Date Time: 02/11/2021 12:35:56 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 12:35:57 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 12:52:34 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 12:52:34 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 12:52:36 ---Message: Crawler finished. 
+Video: t6OBk9YBLQU
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 1
+ Number of Edges: 0
+Execution time: 0.0 minutes, 2.5952601432800293 seconds
+
+---Date Time: 02/11/2021 12:52:36 ---Message: All Crawlers executed. Total execution time: 0.0 minutes, 2.5952601432800293 seconds
+
+---Date Time: 02/11/2021 12:52:36 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 12:52:36 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 12:53:35 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 12:53:35 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 12:53:37 ---Message: Crawler finished. 
+Video: t6OBk9YBLQU
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 1
+ Number of Edges: 0
+Execution time: 0.0 minutes, 1.9770662784576416 seconds
+
+---Date Time: 02/11/2021 12:53:37 ---Message: All Crawlers executed. Total execution time: 0.0 minutes, 1.977668285369873 seconds
+
+---Date Time: 02/11/2021 12:53:37 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 12:53:37 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 12:54:41 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 12:54:41 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 12:55:28 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 12:55:28 ---Message: Starting crawler on t6OBk9YBLQU
+
+---Date Time: 02/11/2021 13:40:03 ---Message: Crawler finished. 
+Video: t6OBk9YBLQU
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 738
+ Number of Edges: 998
+Execution time: 44.0 minutes, 35.34397077560425 seconds
+
+---Date Time: 02/11/2021 13:40:03 ---Message: All Crawlers executed. Total execution time: 44.0 minutes, 35.34507608413696 seconds
+
+---Date Time: 02/11/2021 13:40:03 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 13:40:04 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 17:10:56 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 17:10:56 ---Message: Starting crawler on lGRcf7mi-Uc
+
+---Date Time: 02/11/2021 17:15:01 ---Message: Crawler failed.  
+Video: lGRcf7mi-Uc
+Exception: 'probabilities'
+
+---Date Time: 02/11/2021 17:15:01 ---Message: All Crawlers executed. Total execution time: 4.0 minutes, 4.480783700942993 seconds
+
+---Date Time: 02/11/2021 17:15:01 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 17:15:01 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 17:23:56 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 17:23:56 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 17:24:56 ---Message: Compiling crawler networks...
+
+---Date Time: 02/11/2021 17:24:56 ---Message: Finished compiling network.
+
+---Date Time: 02/11/2021 17:29:12 ---Message: Starting crawlers...
+
+---Date Time: 02/11/2021 17:29:12 ---Message: Starting crawler on lGRcf7mi-Uc
+
+---Date Time: 02/11/2021 17:55:55 ---Message: Crawler finished. 
+Video: lGRcf7mi-Uc
+Genre:Gaming
+TTL: 6, Branches: 3
+ Number of Nodes: 667
+ Number of Edges: 993
+Execution time: 26.0 minutes, 42.41818618774414 seconds
+
+---Date Time: 02/11/2021 17:55:55 ---Message: All Crawlers executed. Total execution time: 26.0 minutes, 42.42425465583801 seconds
+
+---Date Time: 03/11/2021 08:02:50 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 08:02:50 ---Message: Finished compiling network.
+
+---Date Time: 03/11/2021 10:32:15 ---Message: Starting crawlers...
+
+---Date Time: 03/11/2021 10:32:15 ---Message: Starting crawler on 5xs2BSGe8Wg
+
+---Date Time: 03/11/2021 11:20:45 ---Message: Crawler finished. 
+Video: 5xs2BSGe8Wg
+Genre:News & Politics
+TTL: 6, Branches: 3
+ Number of Nodes: 811
+ Number of Edges: 1031
+Execution time: 48.0 minutes, 29.775428295135498 seconds
+
+---Date Time: 03/11/2021 11:20:45 ---Message: All Crawlers executed. Total execution time: 48.0 minutes, 29.77647304534912 seconds
+
+---Date Time: 03/11/2021 11:20:45 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 11:20:45 ---Message: Finished compiling network.
+
+---Date Time: 03/11/2021 12:55:53 ---Message: Starting crawlers...
+
+---Date Time: 03/11/2021 12:55:53 ---Message: Starting crawler on q7HzpGYmBhg
+
+---Date Time: 03/11/2021 13:46:16 ---Message: Crawler finished. 
+Video: q7HzpGYmBhg
+Genre:Comedy
+TTL: 6, Branches: 3
+ Number of Nodes: 630
+ Number of Edges: 1008
+Execution time: 50.0 minutes, 22.76271152496338 seconds
+
+---Date Time: 03/11/2021 13:46:16 ---Message: All Crawlers executed. Total execution time: 50.0 minutes, 22.76329517364502 seconds
+
+---Date Time: 03/11/2021 13:46:16 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 13:46:17 ---Message: Finished compiling network.
+
+---Date Time: 03/11/2021 18:55:12 ---Message: Starting crawlers...
+
+---Date Time: 03/11/2021 18:55:12 ---Message: Starting crawler on f9azZkjOBvI
+
+---Date Time: 03/11/2021 19:22:14 ---Message: Crawler finished. 
+Video: f9azZkjOBvI
+Genre:Gaming
+TTL: 6, Branches: 3
+ Number of Nodes: 329
+ Number of Edges: 716
+Execution time: 27.0 minutes, 1.8746109008789062 seconds
+
+---Date Time: 03/11/2021 19:22:14 ---Message: All Crawlers executed. Total execution time: 27.0 minutes, 1.8787341117858887 seconds
+
+---Date Time: 03/11/2021 19:22:14 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 19:22:14 ---Message: Finished compiling network.
+
+---Date Time: 03/11/2021 19:37:55 ---Message: Starting crawlers...
+
+---Date Time: 03/11/2021 19:37:55 ---Message: Starting crawler on bOuEJf8Dr_4
+
+---Date Time: 03/11/2021 19:41:18 ---Message: Crawler failed.  
+Video: bOuEJf8Dr_4
+Exception: 'probabilities'
+
+---Date Time: 03/11/2021 19:41:18 ---Message: All Crawlers executed. Total execution time: 3.0 minutes, 22.86962342262268 seconds
+
+---Date Time: 03/11/2021 19:41:18 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 19:41:18 ---Message: Finished compiling network.
+
+---Date Time: 03/11/2021 19:42:24 ---Message: Starting crawlers...
+
+---Date Time: 03/11/2021 19:42:24 ---Message: Starting crawler on bOuEJf8Dr_4
+
+---Date Time: 03/11/2021 20:01:49 ---Message: Crawler failed.  
+Video: bOuEJf8Dr_4
+Exception: 'probabilities'
+
+---Date Time: 03/11/2021 20:01:49 ---Message: All Crawlers executed. Total execution time: 19.0 minutes, 25.18155527114868 seconds
+
+---Date Time: 03/11/2021 20:01:49 ---Message: Compiling crawler networks...
+
+---Date Time: 03/11/2021 20:01:49 ---Message: Finished compiling network.
+
+---Date Time: 04/11/2021 17:05:34 ---Message: Starting crawlers...
+
+---Date Time: 04/11/2021 17:05:34 ---Message: Starting crawler on bOuEJf8Dr_4
+
+---Date Time: 04/11/2021 17:30:56 ---Message: Crawler finished. 
+Video: bOuEJf8Dr_4
+Genre:Nonprofits & Activism
+TTL: 6, Branches: 3
+ Number of Nodes: 360
+ Number of Edges: 818
+Execution time: 25.0 minutes, 21.592788696289062 seconds
+
+---Date Time: 04/11/2021 17:30:56 ---Message: All Crawlers executed. Total execution time: 25.0 minutes, 21.59334969520569 seconds
+
+---Date Time: 04/11/2021 17:30:56 ---Message: Compiling crawler networks...
+
+---Date Time: 04/11/2021 17:30:56 ---Message: Finished compiling network.
+
+---Date Time: 04/11/2021 17:34:58 ---Message: Starting crawlers...
+
+---Date Time: 04/11/2021 17:34:58 ---Message: Starting crawler on o83tQosBB4M
+
+---Date Time: 04/11/2021 18:12:52 ---Message: Crawler finished. 
+Video: o83tQosBB4M
+Genre:Autos & Vehicles
+TTL: 6, Branches: 3
+ Number of Nodes: 856
+ Number of Edges: 1063
+Execution time: 37.0 minutes, 53.8080039024353 seconds
+
+---Date Time: 04/11/2021 18:12:52 ---Message: All Crawlers executed. Total execution time: 37.0 minutes, 53.81001806259155 seconds
+
+---Date Time: 04/11/2021 18:12:52 ---Message: Compiling crawler networks...
+
+---Date Time: 04/11/2021 18:12:52 ---Message: Finished compiling network.
+
+---Date Time: 04/11/2021 18:28:18 ---Message: Starting crawlers...
+
+---Date Time: 04/11/2021 18:28:18 ---Message: Starting crawler on 63wCfqSQp8c
+
+---Date Time: 04/11/2021 19:03:58 ---Message: Crawler finished. 
+Video: 63wCfqSQp8c
+Genre:Science & Technology
+TTL: 6, Branches: 3
+ Number of Nodes: 745
+ Number of Edges: 1044
+Execution time: 35.0 minutes, 40.67758250236511 seconds
+
+---Date Time: 04/11/2021 19:03:58 ---Message: All Crawlers executed. Total execution time: 35.0 minutes, 40.678582429885864 seconds
+
+---Date Time: 04/11/2021 19:07:30 ---Message: Starting crawlers...
+
+---Date Time: 04/11/2021 19:07:30 ---Message: Starting crawler on QHGI2XvYkxc
+
+---Date Time: 04/11/2021 19:40:33 ---Message: Crawler finished. 
+Video: QHGI2XvYkxc
+Genre:Music
+TTL: 6, Branches: 3
+ Number of Nodes: 874
+ Number of Edges: 1063
+Execution time: 33.0 minutes, 2.7432875633239746 seconds
+
+---Date Time: 04/11/2021 19:40:33 ---Message: All Crawlers executed. Total execution time: 33.0 minutes, 2.7438125610351562 seconds
+
+---Date Time: 05/11/2021 11:50:22 ---Message: Starting crawlers...
+
+---Date Time: 05/11/2021 11:50:22 ---Message: Starting crawler on Od1kj8MOMtA
+
+---Date Time: 05/11/2021 12:17:26 ---Message: Crawler finished. 
+Video: Od1kj8MOMtA
+Genre:Howto & Style
+TTL: 6, Branches: 3
+ Number of Nodes: 729
+ Number of Edges: 995
+Execution time: 27.0 minutes, 3.4544084072113037 seconds
+
+---Date Time: 05/11/2021 12:17:26 ---Message: All Crawlers executed. Total execution time: 27.0 minutes, 3.4555392265319824 seconds
+
+---Date Time: 05/11/2021 12:39:00 ---Message: Starting crawlers...
+
+---Date Time: 05/11/2021 12:39:00 ---Message: Starting crawler on D2HKDMWiqMg
+
+---Date Time: 05/11/2021 14:03:16 ---Message: Crawler failed.  
+Video: D2HKDMWiqMg
+Exception: Unable to find the server at youtube.googleapis.com
+
+---Date Time: 05/11/2021 14:03:16 ---Message: All Crawlers executed. Total execution time: 84.0 minutes, 16.441422700881958 seconds
+
+---Date Time: 05/11/2021 14:03:53 ---Message: Starting crawlers...
+
+---Date Time: 05/11/2021 14:03:53 ---Message: Starting crawler on D2HKDMWiqMg
+
+---Date Time: 05/11/2021 14:14:18 ---Message: Crawler failed.  
+Video: D2HKDMWiqMg
+Exception: 'NavigableString' object has no attribute 'head'
+
+---Date Time: 05/11/2021 14:14:18 ---Message: All Crawlers executed. Total execution time: 10.0 minutes, 24.571597576141357 seconds
+
+---Date Time: 05/11/2021 14:14:55 ---Message: Compiling crawler networks...
+
+---Date Time: 05/11/2021 14:14:55 ---Message: Finished compiling network.
+
+---Date Time: 05/11/2021 14:29:45 ---Message: Compiling crawler networks...
+
+---Date Time: 05/11/2021 14:29:46 ---Message: Finished compiling network.
+
+---Date Time: 05/11/2021 14:30:05 ---Message: Starting crawlers...
+
+---Date Time: 05/11/2021 14:30:05 ---Message: Starting crawler on D2HKDMWiqMg
+
+---Date Time: 05/11/2021 14:30:07 ---Message: Crawler failed.  
+Video: D2HKDMWiqMg
+Exception: 'NavigableString' object has no attribute 'head'
+
+---Date Time: 05/11/2021 14:30:07 ---Message: All Crawlers executed. Total execution time: 0.0 minutes, 1.372025489807129 seconds
+
+---Date Time: 06/11/2021 13:39:49 ---Message: Starting crawlers...
+
+---Date Time: 06/11/2021 13:39:49 ---Message: Starting crawler on -6DLT9MHO4M
+
+---Date Time: 06/11/2021 14:06:24 ---Message: Crawler finished. 
+Video: -6DLT9MHO4M
+Genre:Education
+TTL: 6, Branches: 3
+ Number of Nodes: 727
+ Number of Edges: 1003
+Execution time: 26.0 minutes, 35.607675313949585 seconds
+
+---Date Time: 06/11/2021 14:06:24 ---Message: All Crawlers executed. Total execution time: 26.0 minutes, 35.60874700546265 seconds
+
+---Date Time: 06/11/2021 15:14:53 ---Message: Starting crawlers...
+
+---Date Time: 06/11/2021 15:14:53 ---Message: Starting crawler on 9x3nJarG028
+
+---Date Time: 06/11/2021 15:15:12 ---Message: Starting crawlers...
+
+---Date Time: 06/11/2021 15:15:12 ---Message: Starting crawler on 9x3nJarG028
+
+---Date Time: 06/11/2021 15:47:00 ---Message: Crawler finished. 
+Video: 9x3nJarG028
+Genre:Travel & Events
+TTL: 6, Branches: 3
+ Number of Nodes: 719
+ Number of Edges: 1012
+Execution time: 31.0 minutes, 47.77215600013733 seconds
+
+---Date Time: 06/11/2021 15:47:00 ---Message: All Crawlers executed. Total execution time: 31.0 minutes, 47.77215600013733 seconds
+
+---Date Time: 06/11/2021 16:25:04 ---Message: Starting crawlers...
+
+---Date Time: 06/11/2021 16:25:04 ---Message: Starting crawler on wTdRiedQJPI
+
+---Date Time: 06/11/2021 16:57:44 ---Message: Crawler finished. 
+Video: wTdRiedQJPI
+Genre:People & Blogs
+TTL: 6, Branches: 3
+ Number of Nodes: 743
+ Number of Edges: 1012
+Execution time: 32.0 minutes, 40.217705965042114 seconds
+
+---Date Time: 06/11/2021 16:57:44 ---Message: All Crawlers executed. Total execution time: 32.0 minutes, 40.21870541572571 seconds
+
+---Date Time: 07/11/2021 13:01:51 ---Message: Starting crawlers...
+
+---Date Time: 07/11/2021 13:01:51 ---Message: Starting crawler on kabsFD3X4Gs
+
+---Date Time: 07/11/2021 13:45:21 ---Message: Crawler finished. 
+Video: kabsFD3X4Gs
+Genre:Sports
+TTL: 6, Branches: 3
+ Number of Nodes: 677
+ Number of Edges: 1015
+Execution time: 43.0 minutes, 29.20089316368103 seconds
+
+---Date Time: 07/11/2021 13:45:21 ---Message: All Crawlers executed. Total execution time: 43.0 minutes, 29.20089316368103 seconds
+
+---Date Time: 07/11/2021 13:45:22 ---Message: Starting crawlers...
+
+---Date Time: 07/11/2021 13:45:22 ---Message: Starting crawler on kabsFD3X4Gs
+
+---Date Time: 07/11/2021 14:28:39 ---Message: Crawler finished. 
+Video: kabsFD3X4Gs
+Genre:Sports
+TTL: 6, Branches: 3
+ Number of Nodes: 563
+ Number of Edges: 984
+Execution time: 43.0 minutes, 16.55805253982544 seconds
+
+---Date Time: 07/11/2021 14:28:39 ---Message: All Crawlers executed. Total execution time: 43.0 minutes, 16.55805253982544 seconds
+
+---Date Time: 07/11/2021 14:41:24 ---Message: Starting crawlers...
+
+---Date Time: 07/11/2021 14:41:24 ---Message: Starting crawler on 2HFSaxIsJCE
+
+---Date Time: 07/11/2021 15:31:18 ---Message: Crawler finished. 
+Video: 2HFSaxIsJCE
+Genre:Pets & Animals
+TTL: 6, Branches: 3
+ Number of Nodes: 591
+ Number of Edges: 951
+Execution time: 49.0 minutes, 54.426772117614746 seconds
+
+---Date Time: 07/11/2021 15:31:18 ---Message: All Crawlers executed. Total execution time: 49.0 minutes, 54.42777442932129 seconds
+
+---Date Time: 07/11/2021 15:31:49 ---Message: Compiling crawler networks...
+
+---Date Time: 07/11/2021 15:31:50 ---Message: Finished compiling network.

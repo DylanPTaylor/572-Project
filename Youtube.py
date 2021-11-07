@@ -134,6 +134,7 @@ def fetch_data(video):
             'secondaryResults']['secondaryResults']['results'][1:]
     except Exception:
         print("Didnt see any suggestions for "+video)
+        return 0
     suggested_videos = extract_ids(suggested_videos)
 
     genre = parse_content(meta_data, 'genre')

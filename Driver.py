@@ -9,9 +9,44 @@ from datetime import datetime
 HOME = Functions.Home()
 
 # 3 at 6^3 ~= 3,200 api calls
-starting_videos = {"5xs2BSGe8Wg": "News & Politics",
-                   "q7HzpGYmBhg": "Comedy",
-                   "f9azZkjOBvI": "Gaming"}
+starting_videos = {}
+"""
+there were on different ones:
+"FCopvc1Nf20": "Entertainment"
+"9C_HReR_McQ": "Film & Animation",
+"bOuEJf8Dr_4": "Nonprofits & Activism",
+"o83tQosBB4M": "Autos & Vehicles",
+"63wCfqSQp8c":"Science & Technology"
+"t6OBk9YBLQU": "Comedy",
+"q7HzpGYmBhg": "Comedy",
+"uYew7v8PyhA": "News & Politics",
+"5xs2BSGe8Wg": "News & Politics",
+"lGRcf7mi-Uc": "Gaming",
+"f9azZkjOBvI": "Gaming",
+"QHGI2XvYkxc":"Music"
+"Od1kj8MOMtA":"Howto & Style"
+"-6DLT9MHO4M":"Education"
+"9x3nJarG028":"Travel & Events"
+"wTdRiedQJPI":"People & Blogs"
+"kabsFD3X4Gs":"Sports"
+"2HFSaxIsJCE":"Pets & Animals"
+
+Need to be done:
+
+notes:
+sequential crawlers have more nodes and edges as they see more different nodes and edges. 
+Youtube has very small data for the first crawler, so yt only shows the same video and genres.
+by the time the second and third crawler go, yt has collected more data on the ip, and show suggests
+different content.
+
+done on the same vpn:
+suggestiong algorithm sees ip and if its new assumes you really like the first genre youre in.
+
+"5xs2BSGe8Wg": "News & Politics",
+"q7HzpGYmBhg": "Comedy",
+"f9azZkjOBvI": "Gaming",
+
+"""
 
 ttl = 6
 candidates_to_watch = 3
@@ -25,8 +60,6 @@ def compile():
 
     Functions.Log("Compiling crawler networks...")
     Functions.compile_networks(HOME+"\\Level1\\", HOME+"\\Level2\\")
-
-    Functions.compile_networks(HOME+"\\Level2\\", HOME+"\\Level3\\")
     Functions.Log("Finished compiling network.")
 
 
@@ -67,13 +100,7 @@ def main():
     Functions.Log("All Crawlers executed. Total execution time: "+str(((time.time() - total_time)//60))+" minutes, " +
                   str(((time.time() - total_time) % 60))+" seconds")
 
-    Functions.Log("Compiling crawler networks...")
-    Functions.compile_networks(HOME+"\\Level1\\", HOME+"\\Level2\\")
-
-    Functions.compile_networks(HOME+"\\Level2\\", HOME+"\\Level3\\")
-    Functions.Log("Finished compiling network.")
-
 
 if __name__ == "__main__":
     main()
-    # compile()
+    compile()

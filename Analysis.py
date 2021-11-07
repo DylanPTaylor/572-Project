@@ -7,15 +7,19 @@ import Youtube
 import json
 import networkx as nx
 import os
+import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+import matplotlib as mpl
 
-HOME = Functions.Home()+"\\AnalysisData"
+HOME = Functions.Home()
 
 # region Probabilities
 
 
 def crunch_probabilities(nodes):
     # Expect nodes as a dictionary of dictionaries, top level keys are video ids
-    #counter = 0
+    # counter = 0
     # This is also a dictionary of dictionaries, keys are genre names, values are dictionaries of the probability of
     # seeing each genre
     genre_probability_sets = {}
@@ -31,7 +35,7 @@ def crunch_probabilities(nodes):
 
         if sum > 1.1 or sum < 0.9:
             # print(str(counter)+":"+str(sum))
-            #counter += 1
+            # counter += 1
             continue
 
         if this_nodes_genre not in genre_probability_sets:
@@ -103,8 +107,7 @@ def probability_analysis(graph):
 
     translate(probs)
 
-    write_probability_file(probs, "\\genre_probabilities-" +
-                           datetime.now().strftime("%d-%m-%Y")+".csv")
+    write_probability_file(probs, "\\AnalysisData\\genre_probabilities.csv")
 
 # endregion
 
@@ -115,8 +118,9 @@ def probability_analysis(graph):
 # region Degree
 
 
-def average_indegree_by_genre(graph, genres):
+def indegree_by_genre(graph, genres):
     genre_degree_sets = {}
+    genre_max_degrees = {}
     nodes = graph.nodes()
     for genre in genres:
 
@@ -132,8 +136,9 @@ def average_indegree_by_genre(graph, genres):
         average = sum / number_of_nodes
 
         genre_degree_sets[genre] = average
+        genre_max_degrees[genre] = max(in_degrees.values())
 
-    return genre_degree_sets
+    return genre_degree_sets, genre_max_degrees
 
 
 def clustering_by_genre(graph, genres):
@@ -155,29 +160,117 @@ def clustering_by_genre(graph, genres):
 
     return cluster_coefficients
 
-# def highest_degree_by_genre():
 
-# def degree_distribution_by_genre():
+def degree_distribution_by_genre(graph, genres):
+    nodes = graph.nodes()
+    for genre in genres:
+        nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
+        degrees = [graph.in_degree(node, "weight")
+                   for node in nodes_in_this_genre]
+        kmin = min(degrees)
+        kmax = max(degrees)
+        # Get 100 logarithmically spaced bins between kmin and kmax
+        bin_edges = np.logspace(np.log10(kmin+1), np.log10(kmax), num=10)
 
-# def degree_distribution():
+        # histogram the data into these bins
+        density, _ = np.histogram(degrees, bins=bin_edges, density=True)
+
+        fig = plt.figure(figsize=(6, 4))
+
+        # "x" should be midpoint (IN LOG SPACE) of each bin
+        log_be = np.log10(bin_edges)
+        x = 10**((log_be[1:] + log_be[:-1])/2)
+
+        plt.loglog(x, density, marker='o', linestyle='none')
+        plt.xlabel(r"degree $k$", fontsize=16)
+        plt.ylabel(r"$P(k)$", fontsize=16)
+
+        # remove right and top boundaries because they're ugly
+        ax = plt.gca()
+        ax.spines['right'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.yaxis.set_ticks_position('left')
+        ax.xaxis.set_ticks_position('bottom')
+
+        # Show the plot
+        plt.savefig(
+            HOME+"\\AnalysisData\\Degree Distribution\\Deg_Dist_"+genre+".png")
+
+
+def degree_distribution(graph):
+    nodes = graph.nodes()
+    degrees = [graph.in_degree(node, "weight")
+               for node in nodes]
+    kmin = min(degrees)
+    kmax = max(degrees)
+    # Get 100 logarithmically spaced bins between kmin and kmax
+    bin_edges = np.logspace(np.log10(kmin+1), np.log10(kmax), num=15)
+
+    # histogram the data into these bins
+    density, _ = np.histogram(degrees, bins=bin_edges, density=True)
+
+    fig = plt.figure(figsize=(6, 4))
+
+    # "x" should be midpoint (IN LOG SPACE) of each bin
+    log_be = np.log10(bin_edges)
+    x = 10**((log_be[1:] + log_be[:-1])/2)
+
+    plt.loglog(x, density, marker='o', linestyle='none')
+    plt.xlabel(r"degree $k$", fontsize=16)
+    plt.ylabel(r"$P(k)$", fontsize=16)
+
+    # remove right and top boundaries because they're ugly
+    ax = plt.gca()
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.yaxis.set_ticks_position('left')
+    ax.xaxis.set_ticks_position('bottom')
+
+    # Show the plot
+    plt.savefig(
+        HOME+"\\AnalysisData\\Degree Distribution\\Deg_Dist_ALL.png")
+
+
+def write_degree_file(genres, avgs, maxs, coeffs, path):
+
+    if os.path.exists(HOME+path):
+        os.remove(HOME+path)
+
+    with open(HOME + path, "w+") as outfile:
+        outfile.write(
+            "Genre,Average In Degree,Highest In Degree,Clustering Coefficient\n")
+        for genre in genres:
+            outfile.write(genre+","+str(avgs[genre]) +
+                          ","+str(maxs[genre])+","+str(coeffs[genre])+"\n")
 
 
 def degree_analysis(graph, genres):
 
-    avg_indegrees = average_indegree_by_genre(graph, genres)
+    avg_indegrees, max_degrees = indegree_by_genre(graph, genres)
 
     cluster_coefficients = clustering_by_genre(graph, genres)
 
-# endregion
+    write_degree_file(genres, avg_indegrees, max_degrees,
+                      cluster_coefficients, "\\AnalysisData\\degree_analysis.csv")
 
+    #degree_distribution_by_genre(graph, genres)
+    degree_distribution(graph)
+
+
+# endregion
 
 # region community clumping?
 # endregion
 if __name__ == "__main__":
-    relative_path = "\\Level3\\28-10-2021\\"
+    relative_path = "\\Level2\\07-11-2021\\"
 
     graph = Functions.load_graph(HOME+relative_path)
     genres = Functions.load_genres_from_file()
     probability_analysis(graph)
     degree_analysis(graph, genres)
-    # get average weight, highest weight
+
+"""
+TODO
+Add analysis that looks at the probability of getting from genre A to genre B in k hops.
+Set it up as a graph, probabilities are edge weights, run path finding algorithms
+"""

@@ -34,7 +34,9 @@ def load_genres_from_file():
 
 
 def graph_data(crawler):
-    populate_crawler(crawler)
+    var = populate_crawler(crawler)
+    if var == 0:
+        return 0
     update_node(crawler)
 
 
@@ -240,6 +242,10 @@ def select_random(videos, numberToPick):
 def populate_crawler(crawler):
     json_data = fetch_data(crawler.video)
 
+    if json_data == 0:
+        return 0
+
+
     crawler.candidateVideos = json_data["candidate videos"][:
                                                             crawler.numberOfCandidatesToConsider]
     crawler.genre = json_data["genre"]
@@ -253,6 +259,7 @@ def populate_crawler(crawler):
         crawler.probabilities = {}
 
     json_data = None
+    return 1
 
 
 def add_self(crawler):

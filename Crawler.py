@@ -45,7 +45,10 @@ class Crawler:
 
     def watch(self):
         if (self.TTL > 0):
-            Functions.graph_data(self)
+            var = Functions.graph_data(self)
+
+            if var == 0:
+                return
 
             videosToWatch = Functions.select_random(
                 self.candidateVideos, self.branches)
