@@ -13,7 +13,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 from collections import Counter
-from operator import itemgetter
+from operator import indexOf, itemgetter
 
 HOME = Functions.Home()
 
@@ -275,6 +275,36 @@ def fewest_hops_to_exit(graph, genres):
         average_hops_by_genre[genre] = average
     return average_hops_by_genre
 
+
+def fewest_hops_to_enter(graph, genres):
+    all_nodes = graph.nodes()
+    average_hops_by_genre = {}
+    all_paths = nx.shortest_path(graph, weight='weight')
+    
+    for genre in genres:
+        genre_nodes = [n for n in all_nodes if all_nodes[n]["genre"] == genre]
+
+        sum = 0
+        count = len(all_nodes) - len(genre_nodes)
+
+        for starting_node in all_paths:
+            if all_nodes[starting_node]['genre'] == genre:
+                continue
+            
+            #these are already sorted by list length
+            this_nodes_paths = all_paths[starting_node]
+            for target_node in this_nodes_paths:
+                if all_nodes[target_node]['genre'] == genre:
+                    sum += len(all_paths[starting_node][target_node])
+                    break
+                elif target_node == list(this_nodes_paths)[-1]:
+                    count -= 1
+
+
+        average = sum/count
+
+        average_hops_by_genre[genre] = average
+    return average_hops_by_genre
 # endregion
 
 # region Community detection
@@ -381,8 +411,14 @@ if __name__ == "__main__":
     inverted_graph = Functions.load_graph(HOME+relative_path, True)
     genres = Functions.load_genres_from_file()
 
-    hops = fewest_hops_to_exit(inverted_graph, genres)
-
+    enter_hops = fewest_hops_to_enter(inverted_graph, genres)
+    
+    write_by_genre(genres, "\\AnalysisData\\hops_to_enter.csv",
+                   enter_hops, "Average Fewest Hops To Enter")
+    
+    """
+    
+    exit_hops = fewest_hops_to_exit(inverted_graph, genres)
     avg_indegrees, max_degrees, cluster_coefficients = degree_analysis(
         graph, genres)
 
@@ -408,7 +444,8 @@ if __name__ == "__main__":
     write_by_genre(genres, "\\AnalysisData\\clusternig_coefficient.csv",
                    cluster_coefficients, "Average Clustering Coefficient")
     write_by_genre(genres, "\\AnalysisData\\hops_to_exit.csv",
-                   hops, "Average Fewest Hops To Exit")
+                   exit_hops, "Average Fewest Hops To Exit")
+    """
 
 """
 TODO
