@@ -2,6 +2,7 @@ from itertools import count
 from datetime import datetime
 
 from networkx.algorithms.bipartite import cluster
+from networkx.algorithms.shortest_paths.generic import shortest_path
 import Functions
 import Youtube
 import json
@@ -11,6 +12,8 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+from collections import Counter
+from operator import itemgetter
 
 HOME = Functions.Home()
 
@@ -74,7 +77,7 @@ def translate(sets):
         sets[genre] = new_probs
 
 
-def write_probability_file(probs, path):
+def write_genre_by_genre(probs, path):
     column_header = []
     for genre in probs:
         for g in probs[genre]:
@@ -107,16 +110,20 @@ def probability_analysis(graph):
 
     translate(probs)
 
-    write_probability_file(probs, "\\AnalysisData\\genre_probabilities.csv")
-
-# endregion
-
-# region Edge Weights
+    return probs
 
 # endregion
 
 # region Degree
-
+def count_nodes(graph,genres):
+    nodes = graph.nodes()
+    genres_counters = {}
+    for genre in genres:
+        
+        nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
+        number_of_nodes = len(nodes_in_this_genre)
+        genres_counters[genre] = number_of_nodes
+    return genres_counters
 
 def indegree_by_genre(graph, genres):
     genre_degree_sets = {}
@@ -161,87 +168,65 @@ def clustering_by_genre(graph, genres):
     return cluster_coefficients
 
 
+"""
+The following code we taken from
+
+https://stackoverflow.com/questions/53958700/plotting-the-degree-distribution-of-a-graph-using-nx-degree-histogram
+
+"""
+
+
 def degree_distribution_by_genre(graph, genres):
     nodes = graph.nodes()
     for genre in genres:
         nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
-        degrees = [graph.in_degree(node, "weight")
-                   for node in nodes_in_this_genre]
-        kmin = min(degrees)
-        kmax = max(degrees)
-        # Get 100 logarithmically spaced bins between kmin and kmax
-        bin_edges = np.logspace(np.log10(kmin+1), np.log10(kmax), num=10)
+        degseq = [graph.in_degree(node, "weight")
+                  for node in nodes_in_this_genre]
+        dmax = max(degseq)+1
+        freq = [0 for d in range(dmax)]
+        for d in degseq:
+            freq[d] += 1
 
-        # histogram the data into these bins
-        density, _ = np.histogram(degrees, bins=bin_edges, density=True)
+        degrees = range(len(freq))
+        plt.figure(figsize=(12, 8))
+        plt.loglog(range(len(freq)), freq, 'go-', label='in-degree')
 
-        fig = plt.figure(figsize=(6, 4))
-
-        # "x" should be midpoint (IN LOG SPACE) of each bin
-        log_be = np.log10(bin_edges)
-        x = 10**((log_be[1:] + log_be[:-1])/2)
-
-        plt.loglog(x, density, marker='o', linestyle='none')
-        plt.xlabel(r"degree $k$", fontsize=16)
-        plt.ylabel(r"$P(k)$", fontsize=16)
-
-        # remove right and top boundaries because they're ugly
-        ax = plt.gca()
-        ax.spines['right'].set_visible(False)
-        ax.spines['top'].set_visible(False)
-        ax.yaxis.set_ticks_position('left')
-        ax.xaxis.set_ticks_position('bottom')
+        plt.xlabel('Degree')
+        plt.ylabel('Frequency')
 
         # Show the plot
         plt.savefig(
-            HOME+"\\AnalysisData\\Degree Distribution\\Deg_Dist_"+genre+".png")
+            HOME+"\\AnalysisData\\Degree Distribution\\"+genre+".png")
 
 
-def degree_distribution(graph):
-    nodes = graph.nodes()
-    degrees = [graph.in_degree(node, "weight")
-               for node in nodes]
-    kmin = min(degrees)
-    kmax = max(degrees)
-    # Get 100 logarithmically spaced bins between kmin and kmax
-    bin_edges = np.logspace(np.log10(kmin+1), np.log10(kmax), num=15)
+"""
+The following code we taken from
 
-    # histogram the data into these bins
-    density, _ = np.histogram(degrees, bins=bin_edges, density=True)
+https://stackoverflow.com/questions/53958700/plotting-the-degree-distribution-of-a-graph-using-nx-degree-histogram
 
-    fig = plt.figure(figsize=(6, 4))
+as it was in the prvious method
+"""
 
-    # "x" should be midpoint (IN LOG SPACE) of each bin
-    log_be = np.log10(bin_edges)
-    x = 10**((log_be[1:] + log_be[:-1])/2)
 
-    plt.loglog(x, density, marker='o', linestyle='none')
-    plt.xlabel(r"degree $k$", fontsize=16)
-    plt.ylabel(r"$P(k)$", fontsize=16)
+def degree_dist_all(G):
+    nodes = G.nodes()
+    in_degree = dict(G.in_degree())
+    degseq = [in_degree.get(k, 0) for k in nodes]
+    dmax = max(degseq)+1
+    freq = [0 for d in range(dmax)]
+    for d in degseq:
+        freq[d] += 1
 
-    # remove right and top boundaries because they're ugly
-    ax = plt.gca()
-    ax.spines['right'].set_visible(False)
-    ax.spines['top'].set_visible(False)
-    ax.yaxis.set_ticks_position('left')
-    ax.xaxis.set_ticks_position('bottom')
+    degrees = range(len(freq))
+    plt.figure(figsize=(12, 8))
+    plt.loglog(range(len(freq)), freq, 'go-', label='in-degree')
 
-    # Show the plot
+    plt.xlabel('Degree')
+    plt.ylabel('Frequency')
+
     plt.savefig(
-        HOME+"\\AnalysisData\\Degree Distribution\\Deg_Dist_ALL.png")
-
-
-def write_degree_file(genres, avgs, maxs, coeffs, path):
-
-    if os.path.exists(HOME+path):
-        os.remove(HOME+path)
-
-    with open(HOME + path, "w+") as outfile:
-        outfile.write(
-            "Genre,Average In Degree,Highest In Degree,Clustering Coefficient\n")
-        for genre in genres:
-            outfile.write(genre+","+str(avgs[genre]) +
-                          ","+str(maxs[genre])+","+str(coeffs[genre])+"\n")
+        HOME+"\\AnalysisData\\Degree Distribution\\ALL.png")
+# not quite right
 
 
 def degree_analysis(graph, genres):
@@ -250,27 +235,190 @@ def degree_analysis(graph, genres):
 
     cluster_coefficients = clustering_by_genre(graph, genres)
 
-    write_degree_file(genres, avg_indegrees, max_degrees,
-                      cluster_coefficients, "\\AnalysisData\\degree_analysis.csv")
+    degree_dist_all(graph)
+    degree_distribution_by_genre(graph, genres)
 
-    #degree_distribution_by_genre(graph, genres)
-    degree_distribution(graph)
+    return avg_indegrees, max_degrees, cluster_coefficients
 
 
 # endregion
 
-# region community clumping?
+# region Edge Weights
+def fewest_hops_to_exit(graph, genres):
+    all_nodes = graph.nodes()
+    average_hops_by_genre = {}
+    for genre in genres:
+        genre_nodes = [n for n in all_nodes if all_nodes[n]["genre"] == genre]
+
+        sum = 0
+        count = len(genre_nodes)
+
+        for node in genre_nodes:
+            all_paths = nx.shortest_path(
+                graph, node, None, "weight", "dijkstra")
+
+            for n in genre_nodes:
+                try:
+                    del all_paths[n]
+                except:
+                    continue
+
+            all_paths = all_paths.values()
+
+            try:
+                sum += min([len(i) for i in all_paths])
+            except:
+                count -= 1
+
+        average = sum/count
+
+        average_hops_by_genre[genre] = average
+    return average_hops_by_genre
+
 # endregion
+
+# region Community detection
+
+
+def from_one_to_the_other(graph, genres):
+    nodes = graph.nodes()
+    average_distance = {}
+    paths = nx.shortest_path(graph, weight="weight")
+    for genre_A in genres:
+        genre_A_nodes = [n for n in nodes if nodes[n]["genre"] == genre_A]
+
+        for genre_B in genres:
+            if genre_A == genre_B:
+                continue
+
+            genre_B_nodes = [n for n in nodes if nodes[n]["genre"] == genre_B]
+
+            total_sum = 0
+            no_path_count = 0
+            # sum the path lengths from any node in genre A to any node in genre B
+            for nodeA in genre_A_nodes:
+                node_A_sum = 0
+                count = len(genre_B_nodes)
+                for nodeB in genre_B_nodes:
+                    try:
+                        node_A_sum += len(paths[nodeA][nodeB])
+                    except:
+                        count -= 1
+                try:
+                    node_A_average = node_A_sum/count
+                    total_sum += node_A_average
+                except:
+                    no_path_count += 1
+                    continue
+
+            average = total_sum/(len(genre_A_nodes)-no_path_count)
+            try:
+                average_distance[genre_A][genre_B] = average
+            except:
+                average_distance[genre_A] = {}
+                average_distance[genre_A][genre_B] = average
+
+    return average_distance
+
+# def girvan_newman():
+# endregion
+
+# region Centrality
+
+
+def betweenness(graph, genres):
+    genre_centrality = {}
+    counters = {}
+    all_nodes = graph.nodes()
+    centrality = nx.betweenness_centrality(
+        G=graph, k=None, normalized=True, weight='weight')
+    for node in centrality:
+        node_genre = all_nodes[node]['genre']
+        try:
+            genre_centrality[node_genre] += centrality[node]
+            counters[node_genre] += 1
+        except:
+            genre_centrality[node_genre] = centrality[node]
+            counters[node_genre] = 1
+
+    for genre in genre_centrality:
+        genre_centrality[genre] = (
+            genre_centrality[genre] / counters[genre]) * 1000
+
+    return genre_centrality
+# endregion
+
+
+def write_by_genre(genres, path, avg_in_deg, maxs, coeffs, hops):
+
+    if os.path.exists(HOME+path):
+        os.remove(HOME+path)
+
+    with open(HOME + path, "w+") as outfile:
+        outfile.write(
+            "Genre,Average In Degree,Highest In Degree,Clustering Coefficient,Average Hops To Exit\n")
+        for genre in genres:
+            outfile.write(genre+","+str(avg_in_deg[genre]) + ","+str(
+                maxs[genre])+","+str(coeffs[genre])+","+str(hops[genre])+"\n")
+
+
+def write_by_genre(genres, path, dict, name):
+
+    if os.path.exists(HOME+path):
+        os.remove(HOME+path)
+
+    with open(HOME + path, "w+") as outfile:
+        outfile.write(
+            "Genre,"+name+"\n")
+        for genre in genres:
+            outfile.write(genre+","+str(dict[genre]) + "\n")
+
+
 if __name__ == "__main__":
-    relative_path = "\\Level2\\07-11-2021\\"
+    relative_path = "\\Level2\\09-11-2021\\"
 
     graph = Functions.load_graph(HOME+relative_path)
+    inverted_graph = Functions.load_graph(HOME+relative_path, True)
     genres = Functions.load_genres_from_file()
-    probability_analysis(graph)
-    degree_analysis(graph, genres)
+
+    hops = fewest_hops_to_exit(inverted_graph, genres)
+
+    avg_indegrees, max_degrees, cluster_coefficients = degree_analysis(
+        graph, genres)
+
+    avg_dist_btwn_genres = from_one_to_the_other(
+        inverted_graph, genres)
+
+    between = betweenness(inverted_graph, genres)
+
+    probs = probability_analysis(graph)
+    
+    num_of_nodes = count_nodes(graph, genres)
+
+    write_genre_by_genre(probs, "\\AnalysisData\\genre_probabilities.csv")
+    write_genre_by_genre(avg_dist_btwn_genres,
+                         "\\AnalysisData\\distance.csv")
+    write_by_genre(genres, "\\AnalysisData\\node_count.csv",num_of_nodes, "Number of Nodes")
+    write_by_genre(genres, "\\AnalysisData\\betweeness.csv",
+                   between, "Average Betweeness")
+    write_by_genre(genres, "\\AnalysisData\\in_degrees.csv",
+                   avg_indegrees, "Average In-Degree")
+    write_by_genre(genres, "\\AnalysisData\\max_degrees.csv",
+                   max_degrees, "Highest In-Degree")
+    write_by_genre(genres, "\\AnalysisData\\clusternig_coefficient.csv",
+                   cluster_coefficients, "Average Clustering Coefficient")
+    write_by_genre(genres, "\\AnalysisData\\hops_to_exit.csv",
+                   hops, "Average Fewest Hops To Exit")
 
 """
 TODO
+
 Add analysis that looks at the probability of getting from genre A to genre B in k hops.
 Set it up as a graph, probabilities are edge weights, run path finding algorithms
+
+shortest path from any node in genre A to any node in genre B, based on edge weights 
+    -> shorter paths use higher edge weights, as nodes were more likely to click on those videos
+
+simrank_similarity: compute average similarity of nodes in a genre
+
 """

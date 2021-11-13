@@ -144,6 +144,18 @@ def load_edges(graph,path):
             edge = edge.split(",")
             graph.add_edge(edge[0], edge[1], weight=int(edge[2]))
             edge = edges_file.readline()
+            
+
+def load_edges_inverse_weight(graph,path):
+    edges_path = path+"edges.csv"
+    with open(edges_path) as edges_file:
+        edge = edges_file.readline()  # header
+        edge = edges_file.readline()  # first edge
+        while (edge != ""):
+            edge = edge.split(",")
+            graph.add_edge(edge[0], edge[1], weight=(1/int(edge[2])))
+            edge = edges_file.readline()
+            
 def load_nodes(graph, path):
     nodes_path = path + "nodes.csv"
     with open(nodes_path) as node_file:
@@ -157,11 +169,14 @@ def load_nodes(graph, path):
                 node[2].replace("\'", "\"")))
             node = node_file.readline()
 
-def load_graph(path):
+def load_graph(path, inverse = False):
     graph = nx.DiGraph()
 
     load_nodes(graph, path)
-    load_edges(graph, path)
+    if inverse:
+        load_edges_inverse_weight(graph,path)
+    else:
+        load_edges(graph, path)
     
     return graph
     
