@@ -1,14 +1,14 @@
 Id;Genre;Probabilities
 jk-vdePEiz0;People & Blogs; {'19': 0.1, '22': 0.5, '24': 0.2, '2': 0.1, '27': 0.1}
-CRIJQStY6lA;Music; {'10': 0.9999999999999999}
-TL_8LCPd6p4;People & Blogs; {'22': 0.9999999999999999}
-uYFewTzOY20;News & Politics; {'25': 0.7, '27': 0.30000000000000004}
-eduNYETBqCU;People & Blogs; {'10': 0.2, '22': 0.5, '26': 0.2, '1': 0.1}
-dNDjz6jjYjs;Education; {'22': 0.4, '27': 0.30000000000000004, '28': 0.30000000000000004}
-4tjdLvx3PyI;People & Blogs; {'22': 0.4, '19': 0.6}
 2Ax2vz2rASw;Education; {'27': 0.4, '22': 0.5, '29': 0.1}
-LbzYyPmLtPs;People & Blogs; {'22': 0.6, '10': 0.1, '19': 0.2, '27': 0.1}
-n5-lbfcBt4E;People & Blogs; {'22': 0.7999999999999999, '10': 0.1, '27': 0.1}
 V1VZZZfOOvc;People & Blogs; {'22': 0.7, '10': 0.1, '23': 0.1, '27': 0.1}
+4tjdLvx3PyI;People & Blogs; {'22': 0.4, '19': 0.6}
 hFzsPLS6WWs;People & Blogs; {'2': 0.1, '25': 0.1, '19': 0.5, '22': 0.30000000000000004}
+uYFewTzOY20;News & Politics; {'25': 0.7, '27': 0.30000000000000004}
+n5-lbfcBt4E;People & Blogs; {'22': 0.7999999999999999, '10': 0.1, '27': 0.1}
+dNDjz6jjYjs;Education; {'22': 0.4, '27': 0.30000000000000004, '28': 0.30000000000000004}
 i-N1yioePAQ;Travel & Events; {'19': 0.5, '1': 0.1, '27': 0.1, '22': 0.30000000000000004}
+eduNYETBqCU;People & Blogs; {'10': 0.2, '22': 0.5, '26': 0.2, '1': 0.1}
+CRIJQStY6lA;Music; {'10': 0.9999999999999999}
+LbzYyPmLtPs;People & Blogs; {'22': 0.6, '10': 0.1, '19': 0.2, '27': 0.1}
+TL_8LCPd6p4;People & Blogs; {'22': 0.9999999999999999}

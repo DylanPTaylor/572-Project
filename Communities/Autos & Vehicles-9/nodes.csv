@@ -1,14 +1,14 @@
 Id;Genre;Probabilities
-sk2E7mYspYE;Autos & Vehicles; {'2': 0.6, '22': 0.30000000000000004, '24': 0.1}
-Qhmkm4ulW7Y;Autos & Vehicles; {'2': 0.5, '27': 0.1, '24': 0.30000000000000004, '22': 0.1}
-U-HMIH2ZF3k;Autos & Vehicles; {'22': 0.1, '2': 0.7999999999999999, '1': 0.1}
-YnI5Dqk6DII;Autos & Vehicles; {'2': 0.9999999999999999}
-5Y4uSFrIaB8;People & Blogs; {'22': 0.30000000000000004, '2': 0.6, '24': 0.1}
-hMtOdmgIjKY;Entertainment; {'22': 0.2, '1': 0.1, '24': 0.4, '17': 0.1, '2': 0.2}
-qy7OlJH82gc;Autos & Vehicles; {'2': 0.8999999999999999, '26': 0.1}
-i02uNWdq-Yg;People & Blogs; {'22': 0.2, '2': 0.7999999999999999}
-ZigOVLFkTEM;Autos & Vehicles; {'2': 0.8999999999999999, '26': 0.1}
-qhawXb8MZr4;Entertainment; {'2': 0.7, '23': 0.1, '24': 0.2}
-WMZ2Ydxc6bk;Autos & Vehicles; {'2': 0.9999999999999999}
 Ejn6y5_11hg;People & Blogs; {'24': 0.2, '2': 0.30000000000000004, '1': 0.30000000000000004, '22': 0.2}
+hMtOdmgIjKY;Entertainment; {'22': 0.2, '1': 0.1, '24': 0.4, '17': 0.1, '2': 0.2}
+WMZ2Ydxc6bk;Autos & Vehicles; {'2': 0.9999999999999999}
 owW8IiQPJdk;Entertainment; {'22': 0.1, '24': 0.2, '2': 0.5, '1': 0.2}
+U-HMIH2ZF3k;Autos & Vehicles; {'22': 0.1, '2': 0.7999999999999999, '1': 0.1}
+qhawXb8MZr4;Entertainment; {'2': 0.7, '23': 0.1, '24': 0.2}
+ZigOVLFkTEM;Autos & Vehicles; {'2': 0.8999999999999999, '26': 0.1}
+Qhmkm4ulW7Y;Autos & Vehicles; {'2': 0.5, '27': 0.1, '24': 0.30000000000000004, '22': 0.1}
+5Y4uSFrIaB8;People & Blogs; {'22': 0.30000000000000004, '2': 0.6, '24': 0.1}
+qy7OlJH82gc;Autos & Vehicles; {'2': 0.8999999999999999, '26': 0.1}
+YnI5Dqk6DII;Autos & Vehicles; {'2': 0.9999999999999999}
+i02uNWdq-Yg;People & Blogs; {'22': 0.2, '2': 0.7999999999999999}
+sk2E7mYspYE;Autos & Vehicles; {'2': 0.6, '22': 0.30000000000000004, '24': 0.1}

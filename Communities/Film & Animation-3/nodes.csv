@@ -1,14 +1,14 @@
 Id;Genre;Probabilities
+0a1r0JaONS4;Film & Animation; {'1': 0.7, '20': 0.1, '24': 0.1, '28': 0.1}
+sHFeuBlBUos;Film & Animation; {'1': 0.7, '20': 0.2, '24': 0.1}
 -gHpkHaKi8A;People & Blogs; {'1': 0.7, '22': 0.2, '24': 0.1}
+oc8e9KhlTZI;People & Blogs; {'1': 0.6, '20': 0.1, '24': 0.2, '22': 0.1}
 TF9I1GxNdJQ;Film & Animation; {'1': 0.7999999999999999, '22': 0.1, '20': 0.1}
 kA0Ywk7sQLg;Film & Animation; {'1': 0.8999999999999999, '20': 0.1}
-0a1r0JaONS4;Film & Animation; {'1': 0.7, '20': 0.1, '24': 0.1, '28': 0.1}
-y5zW1c30MGQ;Film & Animation; {'1': 0.75, '24': 0.1, '20': 0.15000000000000002}
-i2lBvEYlFGI;Gaming; {'20': 0.8999999999999999, '24': 0.1}
-fJYpKsGroio;Film & Animation; {'1': 0.7999999999999999, '20': 0.15000000000000002, '23': 0.05}
-oc8e9KhlTZI;People & Blogs; {'1': 0.6, '20': 0.1, '24': 0.2, '22': 0.1}
-GW_fdXHOWp4;Film & Animation; {'1': 0.8999999999999999, '24': 0.1}
 lhikdD6Hf2M;Film & Animation; {'1': 0.8999999999999999, '24': 0.1}
-iVcPGxnp558;Film & Animation; {'1': 0.6, '20': 0.30000000000000004, '24': 0.1}
 gL6GXd54vew;Film & Animation; {'1': 0.30000000000000004, '22': 0.2, '24': 0.2, '20': 0.2, '23': 0.1}
-sHFeuBlBUos;Film & Animation; {'1': 0.7, '20': 0.2, '24': 0.1}
+iVcPGxnp558;Film & Animation; {'1': 0.6, '20': 0.30000000000000004, '24': 0.1}
+y5zW1c30MGQ;Film & Animation; {'1': 0.75, '24': 0.1, '20': 0.15000000000000002}
+fJYpKsGroio;Film & Animation; {'1': 0.7999999999999999, '20': 0.15000000000000002, '23': 0.05}
+GW_fdXHOWp4;Film & Animation; {'1': 0.8999999999999999, '24': 0.1}
+i2lBvEYlFGI;Gaming; {'20': 0.8999999999999999, '24': 0.1}

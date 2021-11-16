@@ -1,12 +1,12 @@
 Id;Genre;Probabilities
+bRJzEPTgqqU;Nonprofits & Activism; {'22': 0.1, '27': 0.35000000000000003, '28': 0.1, '29': 0.35000000000000003, '25': 0.1}
 X-ty-EMXv8k;Education; {'27': 0.7, '29': 0.2, '22': 0.1}
 NBhd10i4nNk;Nonprofits & Activism; {'27': 0.5, '25': 0.2, '29': 0.2, '28': 0.1}
 i7JJgPfHr9Q;Education; {'27': 0.9999999999999999}
-nRg-2hLLgXc;Education; {'27': 0.7, '29': 0.2, '25': 0.1}
 vBXkFDf_2QQ;Nonprofits & Activism; {'29': 0.2, '25': 0.1, '28': 0.1, '27': 0.5, '22': 0.1}
-ltGu4Cru8NQ;News & Politics; {'27': 0.4, '29': 0.2, '10': 0.1, '25': 0.2, '28': 0.1}
-a8PVCkqKD6E;Education; {'29': 0.2, '27': 0.7999999999999999}
-IiiS2cUtZDA;Nonprofits & Activism; {'29': 0.2, '27': 0.2, '22': 0.2, '25': 0.30000000000000004, '26': 0.1}
-zyHBT4sfHoE;Nonprofits & Activism; {'29': 0.5, '24': 0.1, '25': 0.2, '27': 0.1, '10': 0.1}
 4-8NRSfk_a8;Science & Technology; {'27': 0.1, '29': 0.4, '22': 0.2, '25': 0.2, '24': 0.1}
-bRJzEPTgqqU;Nonprofits & Activism; {'22': 0.1, '27': 0.35000000000000003, '28': 0.1, '29': 0.35000000000000003, '25': 0.1}
+nRg-2hLLgXc;Education; {'27': 0.7, '29': 0.2, '25': 0.1}
+ltGu4Cru8NQ;News & Politics; {'27': 0.4, '29': 0.2, '10': 0.1, '25': 0.2, '28': 0.1}
+IiiS2cUtZDA;Nonprofits & Activism; {'29': 0.2, '27': 0.2, '22': 0.2, '25': 0.30000000000000004, '26': 0.1}
+a8PVCkqKD6E;Education; {'29': 0.2, '27': 0.7999999999999999}
+zyHBT4sfHoE;Nonprofits & Activism; {'29': 0.5, '24': 0.1, '25': 0.2, '27': 0.1, '10': 0.1}

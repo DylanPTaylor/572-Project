@@ -1,14 +1,11 @@
 Id;Genre;Probabilities
-Yce2ZvGeanY;Education; {'26': 0.30000000000000004, '27': 0.7}
-lOzSiOIipSM;Education; {'27': 0.6, '24': 0.1, '28': 0.1, '22': 0.1, '26': 0.1}
-pZuPbRIBwrE;Education; {'27': 0.4, '28': 0.2, '26': 0.2, '10': 0.1, '22': 0.1}
-yl_er-KCQU0;Gaming; {'20': 0.5, '27': 0.5}
-s5uFTvtHVbQ;Education; {'28': 0.5, '1': 0.1, '22': 0.2, '27': 0.2}
-bA6pj9la_kQ;Entertainment; {'27': 0.30000000000000004, '28': 0.2, '10': 0.2, '24': 0.2, '26': 0.1}
-wEnh7u6lbaY;Education; {'27': 0.7, '28': 0.1, '24': 0.1, '1': 0.1}
-nFrYZ3y3z9k;Gaming; {'27': 0.5, '26': 0.1, '20': 0.30000000000000004, '1': 0.1}
-8APKcZ-OPpI;Science & Technology; {'27': 0.2, '28': 0.7, '22': 0.1}
-ikg_yghD5Z4;Gaming; {'20': 0.7999999999999999, '1': 0.1, '27': 0.1}
-ZWuJCvID9-o;Film & Animation; {'27': 0.5, '20': 0.2, '28': 0.1, '15': 0.1, '26': 0.1}
-KZMLDHHK3_Y;Education; {'28': 0.4, '15': 0.1, '24': 0.1, '22': 0.30000000000000004, '2': 0.1}
-OPWtTw4tFBY;Howto & Style; {'1': 0.2, '27': 0.4, '26': 0.4}
+X9pC6WW12qE;Education; {'27': 0.9999999999999999}
+1epOMiF_nfc;Education; {'27': 0.8999999999999999, '10': 0.1}
+ipE7R-OXt3k;Education; {'27': 0.9999999999999999}
+SAURpBfGA1I;Education; {'27': 0.9999999999999999}
+_LIlH4jBKyQ;Education; {'27': 0.9999999999999999}
+M5OAjnG6rKo;Education; {'27': 0.9999999999999999}
+qfMHxU49Su0;Education; {'27': 0.9999999999999999}
+2S7hlBmxO6s;Education; {'27': 0.95, '28': 0.05}
+Kp6qxuCqCJk;Education; {'27': 0.9999999999999999}
+5CPs7f7kYHA;Education; {'27': 0.9999999999999999}

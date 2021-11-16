@@ -1,14 +1,14 @@
 Id;Genre;Probabilities
-ZQay4Dqi7qQ;Entertainment; {'24': 0.6, '22': 0.4}
-1nQw3waFzw4;People & Blogs; {'24': 0.2, '28': 0.2, '2': 0.1, '22': 0.4, '25': 0.1}
-0ZKye0YA7x8;Entertainment; {'22': 0.5, '24': 0.1, '28': 0.4}
-Cz-aQCe7xHU;Film & Animation; {'1': 0.7999999999999999, '24': 0.1, '26': 0.1}
-RlZb187A0AQ;People & Blogs; {'22': 0.2, '19': 0.1, '25': 0.2, '28': 0.4, '2': 0.1}
 eXl4b397jQ0;Film & Animation; {'1': 0.7, '24': 0.30000000000000004}
-_OVvlbBFan4;Entertainment; {'19': 0.1, '24': 0.7999999999999999, '27': 0.1}
 puh__jsrriM;Film & Animation; {'1': 0.5, '24': 0.30000000000000004, '23': 0.1, '22': 0.1}
-7O7alUp6w2c;Science & Technology; {'22': 0.30000000000000004, '24': 0.30000000000000004, '28': 0.2, '2': 0.1, '25': 0.1}
-3JXYdmaqCzA;Entertainment; {'24': 0.30000000000000004, '1': 0.1, '27': 0.1, '22': 0.1, '29': 0.2, '19': 0.2}
 bF5422w3ESA;Entertainment; {'24': 0.7999999999999999, '27': 0.2}
+Cz-aQCe7xHU;Film & Animation; {'1': 0.7999999999999999, '24': 0.1, '26': 0.1}
 oPBHGEyMBPQ;Entertainment; {'1': 0.2, '24': 0.7, '22': 0.1}
+3JXYdmaqCzA;Entertainment; {'24': 0.30000000000000004, '1': 0.1, '27': 0.1, '22': 0.1, '29': 0.2, '19': 0.2}
+0ZKye0YA7x8;Entertainment; {'22': 0.5, '24': 0.1, '28': 0.4}
+7O7alUp6w2c;Science & Technology; {'22': 0.30000000000000004, '24': 0.30000000000000004, '28': 0.2, '2': 0.1, '25': 0.1}
+RlZb187A0AQ;People & Blogs; {'22': 0.2, '19': 0.1, '25': 0.2, '28': 0.4, '2': 0.1}
+1nQw3waFzw4;People & Blogs; {'24': 0.2, '28': 0.2, '2': 0.1, '22': 0.4, '25': 0.1}
+_OVvlbBFan4;Entertainment; {'19': 0.1, '24': 0.7999999999999999, '27': 0.1}
 snPvvjdbWE4;Film & Animation; {'24': 0.1, '1': 0.7, '22': 0.2}
+ZQay4Dqi7qQ;Entertainment; {'24': 0.6, '22': 0.4}

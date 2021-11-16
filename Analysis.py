@@ -1,8 +1,11 @@
 from networkx.algorithms.shortest_paths.generic import shortest_path
+from networkx.classes.function import subgraph
+from networkx.generators import directed
 import Functions
 import Youtube
 import networkx as nx
 from networkx.algorithms.community import modularity_max as mod_max
+from networkx.generators.random_graphs import gnp_random_graph
 import os
 import numpy as np
 import networkx as nx
@@ -197,6 +200,68 @@ def degree_distribution_by_genre(graph, genres):
             HOME+"\\AnalysisData\\Degree Distribution\\"+genre+".png")
 
 
+def degree_histogram_directed(G, in_degree=False, out_degree=False):
+    """Return a list of the frequency of each degree value.
+
+    Parameters
+    ----------
+    G : Networkx graph
+       A graph
+    in_degree : bool
+    out_degree : bool
+
+    Returns
+    -------
+    hist : list
+       A list of frequencies of degrees.
+       The degree values are the index in the list.
+
+    Notes
+    -----
+    Note: the bins are width one, hence len(list) can be large
+    (Order(number_of_edges))
+    """
+    nodes = G.nodes()
+    if in_degree:
+        in_degree = dict(G.in_degree())
+        degseq = [in_degree.get(k, 0) for k in nodes]
+    elif out_degree:
+        out_degree = dict(G.out_degree())
+        degseq = [out_degree.get(k, 0) for k in nodes]
+    else:
+        degseq = [v for k, v in G.degree()]
+    dmax = max(degseq)+1
+    freq = [0 for d in range(dmax)]
+    for d in degseq:
+        freq[d] += 1
+    return freq
+
+
+"""
+The following code we taken from
+
+https://stackoverflow.com/questions/53958700/plotting-the-degree-distribution-of-a-graph-using-nx-degree-histogram
+
+as it was in the prvious method
+"""
+
+
+def plot_graph(G, path):
+
+    in_degree_freq = degree_histogram_directed(G, in_degree=True)
+    out_degree_freq = degree_histogram_directed(G, out_degree=True)
+
+    plt.figure(figsize=(12, 8))
+    plt.loglog(range(len(in_degree_freq)),
+               in_degree_freq, 'go-', label='in-degree')
+    plt.loglog(range(len(out_degree_freq)),
+               out_degree_freq, 'bo-', label='out-degree')
+    plt.xlabel('Degree')
+    plt.ylabel('Frequency')
+    plt.savefig(path)
+    plt.close()
+
+
 """
 The following code we taken from
 
@@ -217,14 +282,13 @@ def degree_dist_all(G):
 
     degrees = range(len(freq))
     plt.figure(figsize=(12, 8))
-    plt.loglog(range(len(freq)), freq, 'go-', label='in-degree')
+    plt.loglog(degrees, freq, 'go-', label='in-degree')
 
     plt.xlabel('Degree')
     plt.ylabel('Frequency')
 
     plt.savefig(
         HOME+"\\AnalysisData\\Degree Distribution\\ALL.png")
-# not quite right
 
 
 def degree_analysis(graph, genres):
@@ -381,6 +445,8 @@ def greedy_modularity(undirected_graph, original_graph):
             file.write("Number of nodes,Number of Edges\n")
             file.write(str(len(subG.nodes())) + "," + str(len(subG.edges())))
 
+        plot_graph(subG, HOME+"\\Communities\\" +
+                   dominating_genre+"-"+str(genre_scores[dominating_genre])+"\\degree_dist.png")
     return genre_scores
 
 # ignore genres and run community detection,
@@ -416,6 +482,36 @@ def betweenness(graph, genres):
     return genre_centrality
 # endregion
 
+# region Random network
+
+
+def random_network(iterations, n, p):
+    sum_of_stats = {"clustering": 0}
+    counters = {}
+
+    all_degrees = {}
+    all_coeffs = {}
+
+    for i in range(iterations):
+        G = gnp_random_graph(n, p, directed=True)
+
+        for d in G.in_degrees():
+            try:
+                all_degrees[d] += 1
+            except:
+                all_degrees[d] = 1
+
+        nodes_coefficients = nx.clustering(G)
+
+        for c in nodes_coefficients:
+            try:
+                all_coeffs[c] += 1
+            except:
+                all_coeffs[c] = 1
+
+
+# endregion
+
 
 def write_by_genre(genres, path, avg_in_deg, maxs, coeffs, hops):
 
@@ -442,8 +538,7 @@ def write_by_genre(genres, path, dict, name):
             outfile.write(genre+","+str(dict[genre]) + "\n")
 
 
-# do second: Create random networks and calulcate basic statistics average.
-# do next: implement community detection.
+# do next: Create random networks and calulcate basic statistics average.
 # do last: comment/clean up code.
 if __name__ == "__main__":
     relative_path = "\\Level2\\09-11-2021\\"
@@ -453,12 +548,10 @@ if __name__ == "__main__":
     undirected_graph = graph.to_undirected()
     genres = Functions.load_genres_from_file()
 
-    
-
-    """
     community_scores = greedy_modularity(undirected_graph, graph)
     write_by_genre(genres, "\\AnalysisData\\community_scores.csv",
                    community_scores, "Communities Dominated")
+    """
                    
     enter_hops = fewest_hops_to_enter(inverted_graph, genres)
     write_by_genre(genres, "\\AnalysisData\\hops_to_enter.csv",
@@ -494,16 +587,3 @@ if __name__ == "__main__":
                    between, "Average Betweeness")
     
     """
-
-"""
-TODO
-
-Add analysis that looks at the probability of getting from genre A to genre B in k hops.
-Set it up as a graph, probabilities are edge weights, run path finding algorithms
-
-shortest path from any node in genre A to any node in genre B, based on edge weights 
-    -> shorter paths use higher edge weights, as nodes were more likely to click on those videos
-
-simrank_similarity: compute average similarity of nodes in a genre
-
-"""

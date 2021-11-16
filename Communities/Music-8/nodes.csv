@@ -1,12 +1,12 @@
 Id;Genre;Probabilities
-ecmwWZmaU0A;Autos & Vehicles; {'2': 0.7, '10': 0.2, '28': 0.1}
-SJOKlqJho8U;Music; {'10': 0.8999999999999999, '24': 0.1}
-ApXoWvfEYVU;Music; {'10': 0.6, '20': 0.1, '22': 0.1, '1': 0.1, '24': 0.1}
+NW5DOnKjeHc;Autos & Vehicles; {'2': 0.5, '28': 0.30000000000000004, '24': 0.1, '22': 0.1}
 VjQSie1sQqY;Science & Technology; {'28': 0.7, '2': 0.2, '24': 0.1}
-orJSJGHjBLI;Music; {'10': 0.75, '24': 0.05, '1': 0.1, '22': 0.1}
 TUVcZfQe-Kw;Music; {'10': 0.8999999999999999, '1': 0.1}
+SJOKlqJho8U;Music; {'10': 0.8999999999999999, '24': 0.1}
+gUbUW2-XHIU;Science & Technology; {'28': 0.7, '27': 0.1, '2': 0.1, '1': 0.1}
+ApXoWvfEYVU;Music; {'10': 0.6, '20': 0.1, '22': 0.1, '1': 0.1, '24': 0.1}
 XXYlFuWEuKI;Music; {'10': 0.8999999999999999, '22': 0.1}
 _8awf-MKH-c;Science & Technology; {'28': 0.7999999999999999, '2': 0.1, '1': 0.1}
+orJSJGHjBLI;Music; {'10': 0.75, '24': 0.05, '1': 0.1, '22': 0.1}
+ecmwWZmaU0A;Autos & Vehicles; {'2': 0.7, '10': 0.2, '28': 0.1}
 kTJczUoc26U;Music; {'10': 0.95, '22': 0.05}
-gUbUW2-XHIU;Science & Technology; {'28': 0.7, '27': 0.1, '2': 0.1, '1': 0.1}
-NW5DOnKjeHc;Autos & Vehicles; {'2': 0.5, '28': 0.30000000000000004, '24': 0.1, '22': 0.1}

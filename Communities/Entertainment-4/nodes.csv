@@ -1,90 +1,90 @@
 Id;Genre;Probabilities
-urtFrxDUV6c;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
-vHfPJ1-ERIQ;Entertainment; {'24': 0.6499999999999999, '20': 0.30000000000000004, '22': 0.05}
-taXDBwLOWg8;Entertainment; {'24': 0.9999999999999999}
-P0c2mrOBUzY;Gaming; {'20': 0.6, '24': 0.2, '23': 0.2}
+rJylehVPGkw;Entertainment; {'24': 0.2, '20': 0.6, '23': 0.2}
 GBfRk5v5YGU;Entertainment; {'24': 0.7999999999999999, '26': 0.05, '27': 0.05, '17': 0.05, '28': 0.05}
-F4Y3Pkn95GI;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
+sYbEeoXqDeI;Entertainment; {'27': 0.1, '24': 0.7, '20': 0.2}
+MZHjHKDxY7U;People & Blogs; {'22': 0.7999999999999999, '24': 0.2}
+_Nb_J9FMVJs;Entertainment; {'24': 0.7999999999999999, '26': 0.03333333333333333, '20': 0.13333333333333333, '23': 0.03333333333333333}
+Mnwj7OHVz1c;Entertainment; {'24': 0.8999999999999999, '23': 0.1}
+P0c2mrOBUzY;Gaming; {'20': 0.6, '24': 0.2, '23': 0.2}
+A-vX1AGBGsc;Entertainment; {'24': 0.7, '20': 0.2, '22': 0.1}
+xiRrmMeu4gc;Comedy; {'23': 0.4, '25': 0.1, '20': 0.1, '24': 0.2, '1': 0.1, '22': 0.1}
+5HYlXUbnAJY;Education; {'27': 0.4, '23': 0.1, '24': 0.2, '28': 0.2, '17': 0.1}
 HTri8y9Ia5E;Gaming; {'20': 0.9999999999999999}
-o0hXy8qWa4w;Entertainment; {'24': 0.7, '22': 0.1, '26': 0.1, '27': 0.1}
-G1YSfHWHM44;Comedy; {'28': 0.2, '27': 0.1, '23': 0.30000000000000004, '10': 0.1, '24': 0.1, '1': 0.1, '26': 0.1}
-yY34vFL7ipE;Gaming; {'20': 0.7999999999999999, '24': 0.2}
-C680oxL__ck;Entertainment; {'24': 0.8499999999999999, '20': 0.1, '28': 0.05}
-NQ_qvtpDDZ0;People & Blogs; {'22': 0.9249999999999999, '26': 0.025, '24': 0.025, '27': 0.025}
-uSkKrVAgvH0;Entertainment; {'24': 0.6, '15': 0.30000000000000004, '22': 0.1}
+9kFAEE-WKxU;Entertainment; {'24': 0.8999999999999999, '22': 0.1}
+lCAKBq_t3g8;Entertainment; {'24': 0.9999999999999999}
+pW8zfDIfQK4;Entertainment; {'24': 0.8999999999999999, '23': 0.1}
+NkNQJHbq7Ok;Comedy; {'23': 0.6, '22': 0.2, '24': 0.1, '10': 0.1}
+xUgQXRIXA6c;Entertainment; {'24': 0.9999999999999999}
+xRwy_rKc7gI;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
+vHfPJ1-ERIQ;Entertainment; {'24': 0.6499999999999999, '20': 0.30000000000000004, '22': 0.05}
+ADm5_sZKTVs;Entertainment; {'20': 0.1, '23': 0.5, '22': 0.1, '26': 0.1, '24': 0.2}
+ELS5RLbSukU;Gaming; {'20': 0.7999999999999999, '24': 0.1, '22': 0.1}
+syB1ezRvKpU;Science & Technology; {'28': 0.7, '24': 0.1, '22': 0.1, '23': 0.1}
+OSXbYwoCc5Y;Entertainment; {'24': 0.5, '20': 0.5}
+4eK6FIQZX4o;Entertainment; {'24': 0.7999999999999999, '22': 0.1, '15': 0.1}
+gF4uXGcliu8;Gaming; {'20': 0.5, '24': 0.5}
 EmegXjtRwhI;Entertainment; {'24': 0.7499999999999999, '27': 0.125, '23': 0.1, '22': 0.025}
 9bqk6ZUsKyA;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
-5Fg9oZk-5uA;Entertainment; {'24': 0.9999999999999999}
-nowJp4hsQ7k;Entertainment; {'24': 0.725, '20': 0.225, '17': 0.05}
-9kFAEE-WKxU;Entertainment; {'24': 0.8999999999999999, '22': 0.1}
-SvNz_LdystA;People & Blogs; {'22': 0.7, '27': 0.1, '24': 0.2}
--GZsRFHYbso;Entertainment; {'24': 0.8999999999999999, '22': 0.1}
-ADm5_sZKTVs;Entertainment; {'20': 0.1, '23': 0.5, '22': 0.1, '26': 0.1, '24': 0.2}
-Mnwj7OHVz1c;Entertainment; {'24': 0.8999999999999999, '23': 0.1}
-pOrSwH0so-U;Gaming; {'24': 0.2, '10': 0.1, '23': 0.30000000000000004, '17': 0.1, '22': 0.2, '2': 0.1}
-ofOqUMeEwu8;Music; {'22': 0.30000000000000004, '23': 0.30000000000000004, '1': 0.1, '25': 0.1, '27': 0.1, '24': 0.1}
-GXKM_2RZpbY;Entertainment; {'24': 0.5, '23': 0.2, '25': 0.1, '22': 0.2}
-SCrO3kS1upU;Gaming; {'20': 0.6, '24': 0.30000000000000004, '22': 0.1}
-NPMoSvKhafY;People & Blogs; {'24': 0.30000000000000004, '10': 0.30000000000000004, '22': 0.30000000000000004, '25': 0.1}
-GDRcCvQNY-g;Entertainment; {'24': 0.7, '20': 0.30000000000000004}
-gF4uXGcliu8;Gaming; {'20': 0.5, '24': 0.5}
-56ApMuohfIk;Entertainment; {'15': 0.1, '24': 0.7999999999999999, '22': 0.1}
-PGg3NUNQ-jQ;Gaming; {'22': 0.1, '24': 0.30000000000000004, '20': 0.4, '1': 0.1, '28': 0.1}
-4eK6FIQZX4o;Entertainment; {'24': 0.7999999999999999, '22': 0.1, '15': 0.1}
-HBMmK1c44sE;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
-pW8zfDIfQK4;Entertainment; {'24': 0.8999999999999999, '23': 0.1}
-KoETC8U8VC8;Entertainment; {'24': 0.9999999999999999}
-oXREtC6bMLI;Entertainment; {'24': 0.9999999999999999}
-wtt-uPS_VhU;Gaming; {'20': 0.7, '22': 0.2, '24': 0.1}
-f-iztbNkjCE;Entertainment; {'24': 0.8999999999999999, '17': 0.1}
-uSa9djhYmnw;People & Blogs; {'22': 0.8999999999999999, '24': 0.1}
-flgwsL1wAcE;Gaming; {'20': 0.7999999999999999, '24': 0.2}
-YQB6-F2TnAc;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
-bdENHESVomg;Entertainment; {'24': 0.8999999999999999, '17': 0.1}
-p_FZmjuk5Sw;People & Blogs; {'22': 0.8999999999999999, '24': 0.1}
-_Nb_J9FMVJs;Entertainment; {'24': 0.7999999999999999, '26': 0.03333333333333333, '20': 0.13333333333333333, '23': 0.03333333333333333}
-ELS5RLbSukU;Gaming; {'20': 0.7999999999999999, '24': 0.1, '22': 0.1}
-OSXbYwoCc5Y;Entertainment; {'24': 0.5, '20': 0.5}
-mXVGIb3bzHI;Education; {'27': 0.7999999999999999, '24': 0.2}
-Qpn-G-OFbkM;Entertainment; {'24': 0.6499999999999999, '27': 0.2, '10': 0.05, '20': 0.05, '19': 0.05}
-hgTwmINZ_tQ;Comedy; {'23': 0.8999999999999999, '22': 0.1}
-NkNQJHbq7Ok;Comedy; {'23': 0.6, '22': 0.2, '24': 0.1, '10': 0.1}
-4DW0KjZFIUE;Entertainment; {'24': 0.9999999999999999}
-xRwy_rKc7gI;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
-a_zRq082g9c;People & Blogs; {'22': 0.9999999999999999}
-fUUAQ5E-u6o;Entertainment; {'24': 0.9999999999999999}
-S54Xb0OtArE;Gaming; {'20': 0.8999999999999999, '24': 0.1}
-jthfhpNYDCY;Gaming; {'20': 0.8999999999999999, '24': 0.1}
-QxGVgXf_LNk;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
-A-vX1AGBGsc;Entertainment; {'24': 0.7, '20': 0.2, '22': 0.1}
-UYvmvr5_smQ;Entertainment; {'24': 0.8999999999999999, '27': 0.1}
-ABTdTTnnEU8;Gaming; {'20': 0.7, '24': 0.30000000000000004}
-xiRrmMeu4gc;Comedy; {'23': 0.4, '25': 0.1, '20': 0.1, '24': 0.2, '1': 0.1, '22': 0.1}
-UnW52iopZcw;People & Blogs; {'23': 0.15000000000000002, '24': 0.5, '22': 0.15000000000000002, '17': 0.05, '25': 0.05, '10': 0.05, '1': 0.05}
-PJC-oRDwwY8;Entertainment; {'24': 0.7, '26': 0.1, '27': 0.1, '20': 0.05, '22': 0.05}
-xUgQXRIXA6c;Entertainment; {'24': 0.9999999999999999}
-aqipiqO1m4U;Entertainment; {'24': 0.4, '20': 0.4, '28': 0.1, '22': 0.1}
 _ydI37bwZ-M;Entertainment; {'24': 0.9999999999999999}
-rJylehVPGkw;Entertainment; {'24': 0.2, '20': 0.6, '23': 0.2}
-tZ-T7kHPk_k;Entertainment; {'24': 0.9999999999999999}
-LxiHUYVOjxA;Gaming; {'20': 0.8999999999999999, '22': 0.1}
-lCAKBq_t3g8;Entertainment; {'24': 0.9999999999999999}
-4OOi7xkl8K4;Entertainment; {'24': 0.6, '20': 0.2, '23': 0.1, '22': 0.1}
-034d3YsSxHw;Entertainment; {'26': 0.1, '24': 0.7999999999999999, '20': 0.1}
-c8VcUnz3nVc;Education; {'27': 0.30000000000000004, '24': 0.4, '28': 0.1, '20': 0.15000000000000002, '23': 0.05}
+hgTwmINZ_tQ;Comedy; {'23': 0.8999999999999999, '22': 0.1}
+Qpn-G-OFbkM;Entertainment; {'24': 0.6499999999999999, '27': 0.2, '10': 0.05, '20': 0.05, '19': 0.05}
+bdENHESVomg;Entertainment; {'24': 0.8999999999999999, '17': 0.1}
+QxGVgXf_LNk;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
+jthfhpNYDCY;Gaming; {'20': 0.8999999999999999, '24': 0.1}
+5Fg9oZk-5uA;Entertainment; {'24': 0.9999999999999999}
+taXDBwLOWg8;Entertainment; {'24': 0.9999999999999999}
+aqipiqO1m4U;Entertainment; {'24': 0.4, '20': 0.4, '28': 0.1, '22': 0.1}
+nowJp4hsQ7k;Entertainment; {'24': 0.725, '20': 0.225, '17': 0.05}
+HBMmK1c44sE;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
 7fJdnXABBv0;Entertainment; {'24': 0.7999999999999999, '17': 0.1, '22': 0.1}
-5HYlXUbnAJY;Education; {'27': 0.4, '23': 0.1, '24': 0.2, '28': 0.2, '17': 0.1}
-CT4itvXTfj0;Entertainment; {'24': 0.7999999999999999, '28': 0.1, '22': 0.1}
-AAKk3Jkmtr8;Travel & Events; {'19': 0.9999999999999999}
-m9NYUPL9o3E;Comedy; {'23': 0.6, '24': 0.2, '22': 0.2}
-oriIG2X_qK8;Entertainment; {'24': 0.7, '20': 0.1, '15': 0.1, '22': 0.1}
-oR7v-enA428;People & Blogs; {'22': 0.4, '24': 0.1, '23': 0.4, '10': 0.1}
-3OfSCVmIrPU;News & Politics; {'25': 0.7999999999999999, '29': 0.1, '27': 0.1}
-TNodjyxFjEI;People & Blogs; {'22': 0.9999999999999999}
-mFp_gG9pwdc;People & Blogs; {'22': 0.7999999999999999, '24': 0.2}
-MZHjHKDxY7U;People & Blogs; {'22': 0.7999999999999999, '24': 0.2}
+SvNz_LdystA;People & Blogs; {'22': 0.7, '27': 0.1, '24': 0.2}
+LxiHUYVOjxA;Gaming; {'20': 0.8999999999999999, '22': 0.1}
+ofOqUMeEwu8;Music; {'22': 0.30000000000000004, '23': 0.30000000000000004, '1': 0.1, '25': 0.1, '27': 0.1, '24': 0.1}
+p_FZmjuk5Sw;People & Blogs; {'22': 0.8999999999999999, '24': 0.1}
 4MzYQ_sgjL4;Gaming; {'20': 0.9999999999999999}
+56ApMuohfIk;Entertainment; {'15': 0.1, '24': 0.7999999999999999, '22': 0.1}
+urtFrxDUV6c;Entertainment; {'24': 0.7999999999999999, '20': 0.2}
+NPMoSvKhafY;People & Blogs; {'24': 0.30000000000000004, '10': 0.30000000000000004, '22': 0.30000000000000004, '25': 0.1}
 cV2gBU6hKfY;Entertainment; {'28': 0.15000000000000002, '23': 0.1, '24': 0.5, '20': 0.1, '27': 0.1, '15': 0.05}
-syB1ezRvKpU;Science & Technology; {'28': 0.7, '24': 0.1, '22': 0.1, '23': 0.1}
+AAKk3Jkmtr8;Travel & Events; {'19': 0.9999999999999999}
+-GZsRFHYbso;Entertainment; {'24': 0.8999999999999999, '22': 0.1}
+C680oxL__ck;Entertainment; {'24': 0.8499999999999999, '20': 0.1, '28': 0.05}
+m9NYUPL9o3E;Comedy; {'23': 0.6, '24': 0.2, '22': 0.2}
+YQB6-F2TnAc;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
+SCrO3kS1upU;Gaming; {'20': 0.6, '24': 0.30000000000000004, '22': 0.1}
+yY34vFL7ipE;Gaming; {'20': 0.7999999999999999, '24': 0.2}
+PGg3NUNQ-jQ;Gaming; {'22': 0.1, '24': 0.30000000000000004, '20': 0.4, '1': 0.1, '28': 0.1}
 8J_zM1zYsHg;Gaming; {'20': 0.9999999999999999}
-sYbEeoXqDeI;Entertainment; {'27': 0.1, '24': 0.7, '20': 0.2}
+oR7v-enA428;People & Blogs; {'22': 0.4, '24': 0.1, '23': 0.4, '10': 0.1}
+NQ_qvtpDDZ0;People & Blogs; {'22': 0.9249999999999999, '26': 0.025, '24': 0.025, '27': 0.025}
+oXREtC6bMLI;Entertainment; {'24': 0.9999999999999999}
+034d3YsSxHw;Entertainment; {'26': 0.1, '24': 0.7999999999999999, '20': 0.1}
+PJC-oRDwwY8;Entertainment; {'24': 0.7, '26': 0.1, '27': 0.1, '20': 0.05, '22': 0.05}
+ABTdTTnnEU8;Gaming; {'20': 0.7, '24': 0.30000000000000004}
+UYvmvr5_smQ;Entertainment; {'24': 0.8999999999999999, '27': 0.1}
+wtt-uPS_VhU;Gaming; {'20': 0.7, '22': 0.2, '24': 0.1}
+uSa9djhYmnw;People & Blogs; {'22': 0.8999999999999999, '24': 0.1}
+3OfSCVmIrPU;News & Politics; {'25': 0.7999999999999999, '29': 0.1, '27': 0.1}
+GXKM_2RZpbY;Entertainment; {'24': 0.5, '23': 0.2, '25': 0.1, '22': 0.2}
+4OOi7xkl8K4;Entertainment; {'24': 0.6, '20': 0.2, '23': 0.1, '22': 0.1}
+o0hXy8qWa4w;Entertainment; {'24': 0.7, '22': 0.1, '26': 0.1, '27': 0.1}
+4DW0KjZFIUE;Entertainment; {'24': 0.9999999999999999}
+fUUAQ5E-u6o;Entertainment; {'24': 0.9999999999999999}
+TNodjyxFjEI;People & Blogs; {'22': 0.9999999999999999}
+f-iztbNkjCE;Entertainment; {'24': 0.8999999999999999, '17': 0.1}
+tZ-T7kHPk_k;Entertainment; {'24': 0.9999999999999999}
+uSkKrVAgvH0;Entertainment; {'24': 0.6, '15': 0.30000000000000004, '22': 0.1}
+c8VcUnz3nVc;Education; {'27': 0.30000000000000004, '24': 0.4, '28': 0.1, '20': 0.15000000000000002, '23': 0.05}
+KoETC8U8VC8;Entertainment; {'24': 0.9999999999999999}
+a_zRq082g9c;People & Blogs; {'22': 0.9999999999999999}
+GDRcCvQNY-g;Entertainment; {'24': 0.7, '20': 0.30000000000000004}
+CT4itvXTfj0;Entertainment; {'24': 0.7999999999999999, '28': 0.1, '22': 0.1}
+F4Y3Pkn95GI;Entertainment; {'24': 0.8999999999999999, '20': 0.1}
+oriIG2X_qK8;Entertainment; {'24': 0.7, '20': 0.1, '15': 0.1, '22': 0.1}
+mFp_gG9pwdc;People & Blogs; {'22': 0.7999999999999999, '24': 0.2}
+pOrSwH0so-U;Gaming; {'24': 0.2, '10': 0.1, '23': 0.30000000000000004, '17': 0.1, '22': 0.2, '2': 0.1}
+UnW52iopZcw;People & Blogs; {'23': 0.15000000000000002, '24': 0.5, '22': 0.15000000000000002, '17': 0.05, '25': 0.05, '10': 0.05, '1': 0.05}
+flgwsL1wAcE;Gaming; {'20': 0.7999999999999999, '24': 0.2}
+S54Xb0OtArE;Gaming; {'20': 0.8999999999999999, '24': 0.1}
+G1YSfHWHM44;Comedy; {'28': 0.2, '27': 0.1, '23': 0.30000000000000004, '10': 0.1, '24': 0.1, '1': 0.1, '26': 0.1}
+mXVGIb3bzHI;Education; {'27': 0.7999999999999999, '24': 0.2}
