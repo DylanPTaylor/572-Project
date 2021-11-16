@@ -1,19 +1,14 @@
-from itertools import count
-from datetime import datetime
-
-from networkx.algorithms.bipartite import cluster
 from networkx.algorithms.shortest_paths.generic import shortest_path
 import Functions
 import Youtube
-import json
 import networkx as nx
+from networkx.algorithms.community import modularity_max as mod_max
 import os
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from collections import Counter
-from operator import indexOf, itemgetter
+import itertools
 
 HOME = Functions.Home()
 
@@ -115,15 +110,18 @@ def probability_analysis(graph):
 # endregion
 
 # region Degree
-def count_nodes(graph,genres):
+
+
+def count_nodes(graph, genres):
     nodes = graph.nodes()
     genres_counters = {}
     for genre in genres:
-        
+
         nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
         number_of_nodes = len(nodes_in_this_genre)
         genres_counters[genre] = number_of_nodes
     return genres_counters
+
 
 def indegree_by_genre(graph, genres):
     genre_degree_sets = {}
@@ -280,7 +278,7 @@ def fewest_hops_to_enter(graph, genres):
     all_nodes = graph.nodes()
     average_hops_by_genre = {}
     all_paths = nx.shortest_path(graph, weight='weight')
-    
+
     for genre in genres:
         genre_nodes = [n for n in all_nodes if all_nodes[n]["genre"] == genre]
 
@@ -290,8 +288,8 @@ def fewest_hops_to_enter(graph, genres):
         for starting_node in all_paths:
             if all_nodes[starting_node]['genre'] == genre:
                 continue
-            
-            #these are already sorted by list length
+
+            # these are already sorted by list length
             this_nodes_paths = all_paths[starting_node]
             for target_node in this_nodes_paths:
                 if all_nodes[target_node]['genre'] == genre:
@@ -299,7 +297,6 @@ def fewest_hops_to_enter(graph, genres):
                     break
                 elif target_node == list(this_nodes_paths)[-1]:
                     count -= 1
-
 
         average = sum/count
 
@@ -350,7 +347,48 @@ def from_one_to_the_other(graph, genres):
 
     return average_distance
 
-# def girvan_newman():
+
+def greedy_modularity(undirected_graph, original_graph):
+    set_of_communities = mod_max.greedy_modularity_communities(
+        undirected_graph, 'weight')
+
+    genre_scores = {}
+    nodes = graph.nodes()
+    for community in set_of_communities:
+        genre_counters = {}
+        for node in community:
+            node_genre = nodes[node]['genre']
+            try:
+                genre_counters[node_genre] += 1
+            except:
+                genre_counters[node_genre] = 1
+
+        dominating_genre_index = list(genre_counters.values()).index(
+            max(genre_counters.values()))
+        dominating_genre = list(genre_counters)[dominating_genre_index]
+        try:
+            genre_scores[dominating_genre] += 1
+        except:
+            genre_scores[dominating_genre] = 1
+
+        subG = nx.subgraph(original_graph, community)
+
+        Functions.write_graph(subG, HOME+"\\Communities\\" +
+                              dominating_genre+"-"+str(genre_scores[dominating_genre])+"\\")
+
+        with open(HOME+"\\Communities\\" +
+                  dominating_genre+"-"+str(genre_scores[dominating_genre])+"\\statistics.csv", "w+") as file:
+            file.write("Number of nodes,Number of Edges\n")
+            file.write(str(len(subG.nodes())) + "," + str(len(subG.edges())))
+
+    return genre_scores
+
+# ignore genres and run community detection,
+# save the subgraph
+# calulate number_of_nodes_in_genre / num_nodes_in_community
+# for all present genres
+# genre with highest percent gets a point,
+# print number of points each genre got.
 # endregion
 
 # region Centrality
@@ -404,47 +442,57 @@ def write_by_genre(genres, path, dict, name):
             outfile.write(genre+","+str(dict[genre]) + "\n")
 
 
+# do second: Create random networks and calulcate basic statistics average.
+# do next: implement community detection.
+# do last: comment/clean up code.
 if __name__ == "__main__":
     relative_path = "\\Level2\\09-11-2021\\"
 
     graph = Functions.load_graph(HOME+relative_path)
     inverted_graph = Functions.load_graph(HOME+relative_path, True)
+    undirected_graph = graph.to_undirected()
     genres = Functions.load_genres_from_file()
 
-    enter_hops = fewest_hops_to_enter(inverted_graph, genres)
     
+
+    """
+    community_scores = greedy_modularity(undirected_graph, graph)
+    write_by_genre(genres, "\\AnalysisData\\community_scores.csv",
+                   community_scores, "Communities Dominated")
+                   
+    enter_hops = fewest_hops_to_enter(inverted_graph, genres)
     write_by_genre(genres, "\\AnalysisData\\hops_to_enter.csv",
                    enter_hops, "Average Fewest Hops To Enter")
     
-    """
     
     exit_hops = fewest_hops_to_exit(inverted_graph, genres)
+    write_by_genre(genres, "\\AnalysisData\\hops_to_exit.csv",
+                   exit_hops, "Average Fewest Hops To Exit")
+    
     avg_indegrees, max_degrees, cluster_coefficients = degree_analysis(
         graph, genres)
-
-    avg_dist_btwn_genres = from_one_to_the_other(
-        inverted_graph, genres)
-
-    between = betweenness(inverted_graph, genres)
-
-    probs = probability_analysis(graph)
-    
-    num_of_nodes = count_nodes(graph, genres)
-
-    write_genre_by_genre(probs, "\\AnalysisData\\genre_probabilities.csv")
-    write_genre_by_genre(avg_dist_btwn_genres,
-                         "\\AnalysisData\\distance.csv")
-    write_by_genre(genres, "\\AnalysisData\\node_count.csv",num_of_nodes, "Number of Nodes")
-    write_by_genre(genres, "\\AnalysisData\\betweeness.csv",
-                   between, "Average Betweeness")
     write_by_genre(genres, "\\AnalysisData\\in_degrees.csv",
                    avg_indegrees, "Average In-Degree")
     write_by_genre(genres, "\\AnalysisData\\max_degrees.csv",
                    max_degrees, "Highest In-Degree")
-    write_by_genre(genres, "\\AnalysisData\\clusternig_coefficient.csv",
+    write_by_genre(genres, "\\AnalysisData\\clustering_coefficient.csv",
                    cluster_coefficients, "Average Clustering Coefficient")
-    write_by_genre(genres, "\\AnalysisData\\hops_to_exit.csv",
-                   exit_hops, "Average Fewest Hops To Exit")
+
+    avg_dist_btwn_genres = from_one_to_the_other(
+        inverted_graph, genres)
+    write_genre_by_genre(avg_dist_btwn_genres,
+                         "\\AnalysisData\\distance.csv")    
+
+    probs = probability_analysis(graph)
+    write_genre_by_genre(probs, "\\AnalysisData\\genre_probabilities.csv")
+    
+    num_of_nodes = count_nodes(graph, genres)
+    write_by_genre(genres, "\\AnalysisData\\node_count.csv",num_of_nodes, "Number of Nodes")
+    
+    between = betweenness(inverted_graph, genres)
+    write_by_genre(genres, "\\AnalysisData\\betweeness.csv",
+                   between, "Average Betweeness")
+    
     """
 
 """
