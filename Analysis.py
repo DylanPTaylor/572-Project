@@ -164,7 +164,28 @@ def clustering_by_genre(graph, genres):
         for node in nodes_coefficients:
             sum += nodes_coefficients[node]
 
-        cluster_coefficients[genre] = (sum / number_of_nodes)*100
+        cluster_coefficients[genre] = (sum / number_of_nodes)
+
+    return cluster_coefficients
+
+
+def clustering_by_sub_graph(graph, genres):
+    cluster_coefficients = {}
+    nodes = graph.nodes()
+    for genre in genres:
+
+        nodes_in_this_genre = [n for n in nodes if nodes[n]["genre"] == genre]
+
+        subG = nx.Graph(nx.subgraph(graph, nodes_in_this_genre))
+
+        nodes_coefficients = nx.clustering(subG, None, 'weight')
+
+        sum = 0
+        number_of_nodes = len(nodes_coefficients)
+        for node in nodes_coefficients:
+            sum += nodes_coefficients[node]
+
+        cluster_coefficients[genre] = (sum / number_of_nodes)
 
     return cluster_coefficients
 
@@ -370,6 +391,90 @@ def fewest_hops_to_enter(graph, genres):
 
 # region Community detection
 
+# graph is connected, so all nodes are indirectely tied.
+
+
+def ei_index_indirect(graph, genres):
+    nodes = graph.nodes()
+    ei_index = {}
+    paths = nx.shortest_path(graph, None, None, 'weight', 'dijkstra')
+    for genre_A in genres:
+        genre_A_nodes = [n for n in nodes if nodes[n]["genre"] == genre_A]
+
+        # Count the ties member of A have with other members of A
+        ties_within_genre_A = 0
+        for a in genre_A_nodes:
+            for b in genre_A_nodes:
+                try:
+                    if(paths[a][b] != None):
+                        ties_within_genre_A += 1
+                except:
+                    continue
+
+        # Graph is undirected, so edges are counted twice
+        ties_within_genre_A /= 2
+
+        for genre_B in genres:
+            if genre_A == genre_B:
+                continue
+
+            genre_B_nodes = [n for n in nodes if nodes[n]["genre"] == genre_B]
+
+            # Count the number of ties from genre A to genre B
+            ties_with_B = 0
+            for a in genre_A_nodes:
+                for b in genre_B_nodes:
+                    try:
+                        if(paths[a][b] != None):
+                            ties_with_B += 1
+                    except:
+                        continue
+
+            total_ties = ties_within_genre_A + ties_with_B
+
+            index = (ties_with_B - ties_within_genre_A) / total_ties
+            try:
+                ei_index[genre_A][genre_B] = index
+            except:
+                ei_index[genre_A] = {}
+                ei_index[genre_A][genre_B] = index
+
+    return ei_index
+
+
+def ei_index_direct(graph, genres):
+    nodes = graph.nodes()
+    ei_index = {}
+    for genre_A in genres:
+        genre_A_nodes = [n for n in nodes if nodes[n]["genre"] == genre_A]
+
+        for genre_B in genres:
+            if genre_A == genre_B:
+                continue
+
+            genre_B_nodes = [n for n in nodes if nodes[n]["genre"] == genre_B]
+
+            # Count the ties member of A have with other members of A
+            ties_within_genre_A = 0
+            # Count the number of ties from node A to genre B
+            ties_with_B = 0
+            for (a, b) in graph.edges():
+                if (a in genre_A_nodes and b in genre_A_nodes):
+                    ties_within_genre_A += 1
+                if (a in genre_A_nodes and b in genre_B_nodes) or (a in genre_B_nodes and b in genre_A_nodes):
+                    ties_with_B += 1
+
+            total_ties = ties_within_genre_A + ties_with_B
+
+            index = (ties_with_B - ties_within_genre_A) / total_ties
+            try:
+                ei_index[genre_A][genre_B] = index
+            except:
+                ei_index[genre_A] = {}
+                ei_index[genre_A][genre_B] = index
+
+    return ei_index
+
 
 def from_one_to_the_other(graph, genres):
     nodes = graph.nodes()
@@ -493,21 +598,29 @@ def random_network(iterations, n, p):
     all_coeffs = {}
 
     for i in range(iterations):
-        G = gnp_random_graph(n, p, directed=True)
-
-        for d in G.in_degrees():
+        graph = nx.gnp_random_graph(n, p, seed=None, directed=True)
+        degrees = graph.in_degree()
+        for d in degrees:
             try:
                 all_degrees[d] += 1
             except:
                 all_degrees[d] = 1
 
-        nodes_coefficients = nx.clustering(G)
+        nodes_coefficients = nx.clustering(graph)
 
         for c in nodes_coefficients:
             try:
                 all_coeffs[c] += 1
             except:
                 all_coeffs[c] = 1
+
+    plt.figure(figsize=(12, 8))
+    plt.loglog(len(range(all_degrees.keys()),
+                   all_degrees.values(), 'go-', label='in-degree'))
+    plt.xlabel('Degree')
+    plt.ylabel('Frequency')
+    plt.savefig(HOME+"\\RandomNetworks\\final.png")
+    plt.close()
 
 
 # endregion
@@ -548,10 +661,27 @@ if __name__ == "__main__":
     undirected_graph = graph.to_undirected()
     genres = Functions.load_genres_from_file()
 
+    indicies = ei_index_direct(undirected_graph, genres)
+    write_genre_by_genre(indicies,
+                         "\\AnalysisData\\ei_indicies.csv")
+    """
+    avg_indegrees, max_degrees, cluster_coefficients = degree_analysis(
+        graph, genres)
+    write_by_genre(genres, "\\AnalysisData\\in_degrees.csv",
+                   avg_indegrees, "Average In-Degree")
+    write_by_genre(genres, "\\AnalysisData\\max_degrees.csv",
+                   max_degrees, "Highest In-Degree")
+    write_by_genre(genres, "\\AnalysisData\\clustering_coefficient.csv",
+                   cluster_coefficients, "Average Clustering Coefficient")
+
+    coeffs = clustering_by_sub_graph(graph, genres)
+    write_by_genre(genres, "\\AnalysisData\\clustering_coefficient_subgraphs.csv",
+                   coeffs, "Average Clustering Coefficient")
+                   
+                   
     community_scores = greedy_modularity(undirected_graph, graph)
     write_by_genre(genres, "\\AnalysisData\\community_scores.csv",
                    community_scores, "Communities Dominated")
-    """
                    
     enter_hops = fewest_hops_to_enter(inverted_graph, genres)
     write_by_genre(genres, "\\AnalysisData\\hops_to_enter.csv",
@@ -562,14 +692,7 @@ if __name__ == "__main__":
     write_by_genre(genres, "\\AnalysisData\\hops_to_exit.csv",
                    exit_hops, "Average Fewest Hops To Exit")
     
-    avg_indegrees, max_degrees, cluster_coefficients = degree_analysis(
-        graph, genres)
-    write_by_genre(genres, "\\AnalysisData\\in_degrees.csv",
-                   avg_indegrees, "Average In-Degree")
-    write_by_genre(genres, "\\AnalysisData\\max_degrees.csv",
-                   max_degrees, "Highest In-Degree")
-    write_by_genre(genres, "\\AnalysisData\\clustering_coefficient.csv",
-                   cluster_coefficients, "Average Clustering Coefficient")
+    
 
     avg_dist_btwn_genres = from_one_to_the_other(
         inverted_graph, genres)
