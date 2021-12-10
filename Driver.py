@@ -1,7 +1,20 @@
-from networkx.algorithms.cuts import normalized_cut_size
+"""
+Author: Dylan Taylor
+UCID: 30078900
+Date: 08/12/2021
+
+This class was created entirely by the Author an did not utilize any references
+outside of the typical syntax-related google searches
+
+If you wish to start multiple crawlers on the same IP address, list them (and their genre
+for loggin reasons) if the starting_videos dict below as "id":"genre" pairs
+
+otherwise, specify only one video, run it on the IP, and then switch IPs with a VPN.
+
+To improve this code I recommend using CMD-line commands for your vpn to switch it
+between spawning crawlers, or using the TOR network (this will be much more anonymous at the expens of time) 
+"""
 import Crawler
-import networkx as nx
-import os
 import time
 import Functions
 from datetime import datetime
@@ -10,54 +23,18 @@ HOME = Functions.Home()
 
 # 3 at 6^3 ~= 3,200 api calls
 starting_videos = {}
-"""
-there were on different ones:
-"FCopvc1Nf20": "Entertainment"
-"9C_HReR_McQ": "Film & Animation",
-"bOuEJf8Dr_4": "Nonprofits & Activism",
-"o83tQosBB4M": "Autos & Vehicles",
-"63wCfqSQp8c":"Science & Technology"
-"t6OBk9YBLQU": "Comedy",
-"q7HzpGYmBhg": "Comedy",
-"uYew7v8PyhA": "News & Politics",
-"5xs2BSGe8Wg": "News & Politics",
-"lGRcf7mi-Uc": "Gaming",
-"f9azZkjOBvI": "Gaming",
-"QHGI2XvYkxc":"Music"
-"Od1kj8MOMtA":"Howto & Style"
-"-6DLT9MHO4M":"Education"
-"9x3nJarG028":"Travel & Events"
-"wTdRiedQJPI":"People & Blogs"
-"kabsFD3X4Gs":"Sports"
-"2HFSaxIsJCE":"Pets & Animals"
 
-Need to be done:
-
-notes:
-sequential crawlers have more nodes and edges as they see more different nodes and edges. 
-Youtube has very small data for the first crawler, so yt only shows the same video and genres.
-by the time the second and third crawler go, yt has collected more data on the ip, and show suggests
-different content.
-
-done on the same vpn:
-suggestiong algorithm sees ip and if its new assumes you really like the first genre youre in.
-
-"5xs2BSGe8Wg": "News & Politics",
-"q7HzpGYmBhg": "Comedy",
-"f9azZkjOBvI": "Gaming",
-
-"""
-
+# default parameters
 ttl = 6
 candidates_to_watch = 3
 candidatesToConsider = 10
 
+# for logging
 nodes = 0
 edges = 0
 
 
 def compile():
-
     Functions.Log("Compiling crawler networks...")
     Functions.compile_networks(HOME+"\\Level1\\", HOME+"\\Level2\\")
     Functions.Log("Finished compiling network.")
@@ -76,8 +53,8 @@ def run_crawler(video):
     Functions.write_graph(crawler.graph, HOME +
                           "\\Level1\\"+crawler.video+"-"+datetime.now().strftime("%d-%m-%Y")+"\\")
 
-    nodes = len(list(crawler.graph.nodes()))
-    edges = len(list(crawler.graph.edges()))
+    nodes += len(list(crawler.graph.nodes()))
+    edges += len(list(crawler.graph.edges()))
 
 
 def main():
@@ -102,5 +79,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #main()
+    main()
     compile()
